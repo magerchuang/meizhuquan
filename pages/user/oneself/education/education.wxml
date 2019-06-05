@@ -1,0 +1,58 @@
+
+<view class='container'>
+  <form bindsubmit='formSubmit'>
+  <view class='info_name cell'>
+     <view class='cell_label'><text>学校</text></view>
+     <view class="cell_bd"><input type='text' placeholder='请输入学校名称' ></input></view>
+  </view>
+  
+  <view class="cell section">
+      <view class="cell_label"><text>学历</text></view>
+      <view class="cell_bd">
+        <picker value="{{eduration}}" bindchange="bindPickerChange"  range="{{edu}}">
+          <view class="picker">{{edu[index]}}</view>
+        </picker>
+      </view>
+  </view>
+  <view class='info_name cell'>
+     <view class='cell_label'><text>专业</text></view>
+     <view class="cell_bd"><input type='text' placeholder='请输入专业名称' ></input></view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>入学时间</text></view>
+      <view class="cell_bd">
+        <picker mode="date" value="{{date}}" start="1980-01-01"   bindchange="bindEnterDateChange"  fields="month">
+          <view class="picker">{{enterDate}}</view>
+        </picker>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>毕业时间</text></view>
+      <view class="cell_bd">
+        <picker mode="date" value="{{date}}" start="1980-01-01"   bindchange="bindEndChange"  fields="month">
+          <view class="picker">{{endDate}}</view>
+        </picker>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>在校经历</text></view>
+      <view class="cell_bd paddr30" bindtap='undergo'>
+        <input type='text' disabled='true' class='selectInput' value="{{undergo}}"></input>
+      </view>
+  </view>
+  <view class='info_name cell'>
+     <view class='cell_label'><text>留学经历</text></view>
+     <view class="cell_bd">
+        <radio-group bindchange="radioChange" class="radiogroup">
+           <label class='radio_label' wx:for="{{abroad}}">
+              <radio value='{{item.value}}' checked='{{item.checked}}'></radio>
+              <view class='sex_txt'>{{item.name}}</view>
+           </label>
+        </radio-group>
+     </view>
+  </view>
+  <view class="btn_area">
+      <button form-type="submit">确认</button>
+  </view>
+  </form>
+</view>

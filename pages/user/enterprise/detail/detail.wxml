@@ -1,0 +1,43 @@
+<view class='container'>
+  <view class='top'>
+    <view class='top_l'>
+      <view class='top_l_img'>
+        <image src='{{message.head_img}}'></image>
+      </view>
+    </view>
+    <view class='top_r'>
+      <view class='top_compname'>西安猫电网络科技有限公司</view>
+      <view class='top_r_title'>
+        <view class='top_phone'>
+          <image src='../../../../images/resume/img9.png'></image>
+          <text>初视</text>
+        </view>
+        <view class='top_goumai'>
+          <text>投简历</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='content_l'>
+      <view class='content_l_view'>
+        <view class='view'>{{message.age}}</view>
+        <view class='view'>{{message.typeText}}</view>
+        <view class='view'>{{message.jobType}}</view>
+      </view>
+      <view class='content_l_text'>
+        <view class='text'>浏览 <text>{{message.play_num}}次</text></view>
+        <view class='text'>被收藏 <text>{{message.fav_num}}次</text></view>
+      </view>
+    </view>
+    <view class='content_r'>
+      <text>招聘信息</text>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='bottom_img' wx:for="{{message.video}}" wx:key="{{index}}">
+      <image mode='aspectFill' src='{{item.thumb}}'></image>
+      <image src='../../../../images/icon_video.png' class='play_btn'></image>
+    </view>
+  </view>
+</view>

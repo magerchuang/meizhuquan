@@ -1,0 +1,297 @@
+<!--pages/user/selfCenter/selfCenter.wxml-->
+<view class='container'>
+   <view class='toptab'>
+      <view class='toptab_item {{curIndex == 1?"on":""}}' bindtap='toptab' data-index='1'>
+         <!--<image wx:if="{{curIndex == 1}}" src='../../../../images/oneself_icon1on.png'></image>
+         <image wx:else src='../../../../images/oneself_icon1.png'></image>-->
+         <view class='item_txt'>制作简历</view>
+      </view>
+      <view class='toptab_item {{curIndex == 2?"on":""}}' bindtap='toptab'  data-index='2'>
+         <!--<image wx:if="{{curIndex == 2}}" src='../../../../images/oneself_icon2on.png'></image>
+         <image wx:else src='../../../../images/oneself_icon2.png'></image>-->
+         <view class='item_txt'>已投简历</view>
+      </view>
+      <view class='toptab_item {{curIndex == 3?"on":""}}' bindtap='toptab'  data-index='3'>
+         <!-- <image wx:if="{{curIndex == 3}}" src='../../../../images/oneself_icon3on.png'></image>
+         <image wx:else src='../../../../images/oneself_icon3.png'></image> -->
+         <view class='item_txt'>已购企业</view>
+      </view>
+      <view class='toptab_item {{curIndex == 4?"on":""}}' bindtap='toptab'  data-index='4'>
+         <!-- <image wx:if="{{curIndex == 4}}" src='../../../../images/oneself_icon4on.png'></image>
+         <image wx:else src='../../../../images/oneself_icon4.png'></image> -->
+         <view class='item_txt'>实名认证</view>
+      </view>
+   </view>
+   <!-- //// -->
+   
+   <!-- /// -->
+   <view class='qiye' wx:if="{{curIndex==3}}">
+      <view class='nothing'wx:if="{{nocompany}}">
+          <image src='../../../../images/nothing.png'></image>
+          <text>抱歉，您还没有已购企业！</text>
+      </view>
+      <view class='enterprise' wx:else>
+           <block wx:for="{{buy}}" wx:key="{{buy.id}}">
+           <view class='zw_list'>
+              <view class='zw_top'>
+                  <view class='zw_name'>{{item.job.title}}<text>{{item.job.type}}</text></view>
+                  <view class='zw_money'>{{item.job.salary}}</view>
+              </view>
+              <view class='zw_company'>{{item.job.company_name}}</view>
+              <view class='zw_tag'><text>{{item.job.work_place}}</text><text>{{item.job.work_experience}}</text><text>{{item.job.edu_experience}}</text></view>
+              <view class='zw_peo qiye_box'>
+                 <view class='hr_box'>
+                    <view class='zw_peo_img'><image src='{{item.user.head_img}}'></image></view>
+                    <view class='zw_peo_name'>
+                      <text>{{item.user.nickname}}</text>·<text>HR</text>
+                    </view>
+                  </view>
+                  <view class='qiye_btn'><text>去初现</text></view>
+              </view>
+            </view>
+            </block>
+      </view>
+   </view>
+   <!--已投简历-->
+   <view class='zw_box' wx:if="{{curIndex==2}}">
+      <view class='nothing'wx:if="{{nothing}}">
+          <image src='../../../../images/nothing.png'></image>
+          <text>抱歉，您还没有已投简历！</text>
+      </view>
+      <view class='enterprise' wx:else>  
+      <block wx:for="{{delivery}}" wx:key="{{delivery.id}}">
+           <view class='zw_list'>
+              <view class='zw_top'>
+                  <view class='zw_name'>{{item.job.title}}<text>{{item.job.type}}</text></view>
+                  <view class='zw_money'>{{item.job.salary}}</view>
+              </view>
+              <view class='zw_company'>{{item.job.company_name}}</view>
+              <view class='zw_tag'><text>{{item.job.work_place}}</text><text>{{item.job.work_experience}}</text><text>{{item.job.edu_experience}}</text></view>
+              <view class='zw_peo qiye_box'>
+                 <view class='hr_box'>
+                    <view class='zw_peo_img'><image src='{{item.user.head_img}}'></image></view>
+                    <view class='zw_peo_name'>
+                      <text>{{item.user.nickname}}</text>·<text>HR</text>
+                    </view>
+                  </view>
+              </view>
+            </view>
+            </block>
+        </view>
+   </view>
+   <!-- /// -->
+   <view class='resume' wx:if="{{curIndex==1}}">
+    <view class='make_tab'>
+        <view class='cv_tab {{tabIndex == 1?"on":""}}' bindtap='cvTab' data-index="1">视频简历</view>
+        <view class='cv_tab {{tabIndex == 2?"on":""}}' bindtap='cvTab' data-index="2">文字简历</view>
+    </view>
+    <view class='resume_con' wx:if="{{tabIndex == 1}}">
+        <view class='resume_video'>
+          <image src='../../../../images/resume/img20.jpg'></image>
+          <view class='resume_btnbox'>
+              <view class='resume_button' bindtap='goCamera'>去拍摄</view>
+          </view>
+       </view>
+    </view>
+    <view class='resume_con' wx:if="{{tabIndex == 2}}">
+      
+    <!--基本信息-->
+      <view class='info_card'>
+        <view class='info_cardtit' bindtap=''>
+          <image src='../../../../images/icon_peo.png'></image>
+          <text>基本信息</text>
+        </view>
+        <view class='info_cardbox'>
+            <view class='info_img' bindtap='updateImg'><image src='{{imgSrc}}'></image></view>
+            <view class='info_rtxt gray'>
+                <view class='user_name'><input type='text' value='{{nickname}}' placeholder='姓名'></input></view>
+                <view class='addr'>
+                  <view class='text'>
+                     <picker bindchange="SexyChange" value="{{index}}" range="{{sexy}}">
+                      <view class="picker">
+                          {{userSexy?userSexy:"性别"}}
+                      </view>
+                    </picker>
+                  </view>
+                  <view  class='text'>
+                     <picker bindchange="ageChange" value="{{i}}" range="{{age}}">
+                      <view class="picker">
+                          {{userAge?userAge:"年龄"}}岁
+                      </view>
+                    </picker>
+                  </view>
+                  <view class='text'>
+                     <picker bindchange="eduChange" value="{{k}}" range="{{edu}}">
+                      <view class="picker">
+                          {{education?education:"学历"}}
+                      </view>
+                    </picker>
+                  </view>
+                </view>
+            </view>
+        </view>
+      </view>
+      <!--工作经历-->
+      <view class='info_card'>
+        <view class='info_cardtit'>
+          <image src='../../../../images/icon_bb.png'></image>
+          <text>工作经历</text>
+        </view>
+        <view class='info_cardbox'>
+          <view class='info_licon red'><text></text></view>
+            <view class='info_rtxt gray'>
+                <view class='r_time'>
+                  <view class='time'>
+                     <picker mode = "date" fields ="month" start="2000-1" bindchange="stimeChange" value="{{date}}" >
+                      <view class="picker">
+                          {{wstartTime?wstartTime:"开始时间"}}
+                      </view>
+                     </picker>
+                  </view>-<view class='time'>
+                      <picker mode ="date" fields ="month" start="2000-1" bindchange="etimeChange" value="{{date}}" >
+                      <view class="picker">
+                          {{wendTime?wendTime:"结束时间"}}
+                      </view>
+                    </picker>
+                  </view>
+                </view>
+                <view class='r_compay mt15'><input type='text' value='{{companyName}}' placeholder='公司名称'></input></view>
+                <view class='r_zw mt15'><input type='text' value='{{companyPost}}' placeholder='任职岗位'></input></view>
+            </view>
+        </view>
+        <!-- <view class='morebtn'><button type='button' bindtap='addWorks'>添加更多</button></view> -->
+      </view>
+      <!--求职意向-->
+      <view class='info_card'>
+        <view class='info_cardtit'>
+          <image src='../../../../images/icon_plane.png'></image>
+          <text>求职意向</text>
+        </view>
+        <view class='info_cardbox wrap gray'>
+         <view class='info_licon red'><text></text></view>
+         <view class='info_rtxt gray'>
+            <view class='job'>
+              <view class='job_label'><text>行</text><text>业</text></view>
+              <view class='job_labelr'>
+                <view class='job_t' bindtap='translate'>{{selectedTrade?selectedTrade:'所属行业'}}</view>
+                <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+                    <view class="animation-element" animation="{{animation}}">
+                        <view class='trade'>
+                            <view class='trade_hd'>行业</view>
+                            <view class='trade_bd'>
+                                <view class='list_box {{trade[index].selected?"on":""}}' wx:for="{{trade}}" wx:key="{{index}}" bindtap='selectTrade' data-index="{{index}}">{{trade[index].name}}</view>
+                            </view>
+                        </view>
+                        <view class='buttom'>
+                          <view class="animation-reset"bindtap="chongzhi">重置</view>
+                          <view class="animation-button" bindtap="success" data-val="{{con_trade}}">确定</view>
+                        </view>
+                    </view>
+                </view>
+              </view>
+            </view>
+            <view class='job mt15'>
+              <view class='job_label'>工作地点</view>
+              <view class='job_labelr black'>{{city}}</view>
+            </view>
+            <view class='job mt15'>
+              <view class='job_label'>期望薪资</view>
+              <view class='job_labelr'>
+                 <picker bindchange="wagesChange" value="{{w}}" range='{{wages}}'>
+                      <view class="picker">
+                          {{userWages?userWages:"期望薪资"}}
+                      </view>
+                     </picker>
+              </view>
+            </view>
+            <view class='job mt15'>
+                 <view class='job_label'>求职岗位</view>
+                 <view class='job_labelr'>
+                    <view class='job_t' bindtap='post'>{{post?post:'求职岗位'}}</view>
+                    <view class='{{fstyleClass}}'>
+                      <view class='filtrate'>
+                        <view class='filtrate_top'>
+                        <view>岗位</view>
+                        <checkbox-group bindchange="checkboxChange" >
+                          <block wx:for="{{category}}" wx:for-item="value" wx:for-index="idx" wx:key="idx">
+                          <!-- 年龄 -->
+                          
+                          <view class='filtrate_age'>
+                            <view class='filtrate_age_text'>{{value.title}}
+                              <view class='more_img' wx:if="{{value.sub.length>6}}" data-i="{{idx}}" data-on="{{show[idx]}}" bindtap="more">
+                                全部<image src='../../../../images/resume/img39.png'></image>
+                              </view>
+                            </view>
+                            <view class='filtrate_age_text_num {{show[idx]?"":"auto_height"}}'>
+                              <!--二级类--> 
+                              
+                              <label class="{{item.checked?'checkbox checked':'checkbox'}} {{item.disabled?'disabled':''}}" bindtap='checkbox' wx:for="{{value.sub}}" data-idx="{{idx}}" data-index="{{index}}" wx:key="item.title" data-disabled="{{item.disabled}}">
+                              <checkbox value="{{item.title}}" checked="{{item.checked}}"/>
+                              {{item.title}}
+                              </label>
+                              
+                            </view>
+                          </view>
+                          
+                          </block>  
+                          </checkbox-group>
+          
+                          <!-- /// -->
+                        </view>
+                          <!-- input -->
+                          <view class='{{btn}}'>
+                            <button class='' data-index='1 'bindtap='btn_reset'>重置</button>
+                            <button class='btn_active' data-index='2 'bindtap='btn_submit'>确定</button>
+                          </view>
+                        </view>
+                      </view>
+                      <!-- 筛选的个数 -->
+                      <view class='{{yc_num}}'>
+                        <view class='filtrate_img'>
+                          <image src='../../../../images/resume/img42.png'></image>
+                        </view>
+                        <view class='filtrate_text'>
+                          <text>筛选个数不能超过5哦~</text>
+                        </view>
+                      </view>
+                    </view>
+                 </view>
+              </view>
+        </view>
+      </view>
+      <!--教育经历-->
+      <view class='info_card'>
+        <view class='info_cardtit'>
+          <image src='../../../../images/icon_mz.png'></image>
+          <text>教育经历</text>
+        </view>
+        <view class='info_cardbox'>
+          <view class='info_licon red'><text></text></view>
+            <view class='info_rtxt gray'>
+                <view class='r_time'>
+                   <view class='time'>
+                       <picker mode = "date" fields ="month" start="2000-1" bindchange="stChange" value="{{date}}" >
+                          <view class="picker">
+                              {{eStartTime?eStartTime:"开始时间"}}
+                          </view>
+                      </picker>
+                   </view>-<view class='time'>
+                       <picker mode = "date" fields ="month" start="2000-1" bindchange="edChange" value="{{date}}" >
+                          <view class="picker">
+                              {{eEndTime?eEndTime:"结束时间"}}
+                          </view>
+                      </picker>
+                   </view>
+                </view>
+                <view class='r_compay mt15'><input type='text' value='{{eSchoolName}}' placeholder='学校名称'></input></view>
+                <view class='r_zw mt15'><input type='text' value='{{eSchoolSpecial}}' placeholder='专业'></input></view>
+            </view>
+        </view>
+      </view>
+      <view class='btn mt15'>
+          <button type='button'>确定</button>
+      </view>
+    </view>
+   </view>
+   
+</view>

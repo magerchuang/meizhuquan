@@ -1,0 +1,56 @@
+/* pages/user/enterprise/post/post.wxss */
+.container{padding: 0 30rpx;}
+.headimg{display: flex;padding: 20rpx 0;border-bottom:1rpx solid #e6e6e6;}
+.headimg text{display: inline-block;flex: 1;line-height: 120rpx;font-size:30rpx;}
+.headimg image{width:120rpx;height:120rpx;vertical-align: middle;border-radius: 50%;}
+.cell{position: relative;display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-align: center;-webkit-align-items:center;align-items:center;border-bottom:1rpx solid #e6e6e6;}
+.cell text{display: block;width:200rpx;word-break: break-all;word-wrap: break-word;font-size:30rpx;padding:30rpx 0;}
+.cell_bd{-webkit-box-flex:1;-webkit-flex:1;flex: 1;}
+.cell_bd input{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);width:100%;border:0;outline: 0;-webkit-appearance: none;background: transparent;font-size:30rpx;text-align: right;padding:30rpx 0;}
+/*  重写 radio 样式  */
+/* 未选中的 背景样式 */
+.radiogroup{text-align: right;}
+radio .wx-radio-input{
+   border-radius: 50%;
+   width: 40rpx;
+   height:40rpx;
+   box-sizing: border-box;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+   background: #ff498f !important;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 40rpx; 
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff; 
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.sex_txt{display: inline-block;font-size:30rpx;}
+.radio_label{margin-right:20rpx;}
+.picker{font-size:30rpx;color:#666;text-align: right;padding:30rpx 30rpx 30rpx 0;}
+.section::after{content: " ";
+    display: inline-block;
+    height: 12rpx;
+    width: 12rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #e6e6e6;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    top: -2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    right: 2px;}
+.paddr30{padding-right:30rpx;}
+.btn_area{margin-top:50rpx;}
+.btn_area button{background: #ff006e;color:#fff;}

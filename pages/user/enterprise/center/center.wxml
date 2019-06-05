@@ -1,0 +1,461 @@
+<!--pages/user/selfCenter/selfCenter.wxml-->
+<view class='container'>
+   <view class='toptab'>
+      <view class='toptab_item {{curIndex == 1?"on":""}}' bindtap='toptab' data-index='1'>
+         <!--<image wx:if="{{curIndex == 1}}" src='../../../../images/oneself_icon1on.png'></image>
+         <image wx:else src='../../../../images/oneself_icon1.png'></image>-->
+         <view class='item_txt'>发布招聘</view>
+      </view>
+      <view class='toptab_item {{curIndex == 2?"on":""}}' bindtap='toptab'  data-index='2'>
+         <!--<image wx:if="{{curIndex == 2}}" src='../../../../images/oneself_icon2on.png'></image>
+         <image wx:else src='../../../../images/oneself_icon2.png'></image>-->
+         <view class='item_txt'>简历清单</view>
+      </view>
+      <view class='toptab_item {{curIndex == 3?"on":""}}' bindtap='toptab'  data-index='3'>
+         <!-- <image wx:if="{{curIndex == 3}}" src='../../../../images/oneself_icon3on.png'></image>
+         <image wx:else src='../../../../images/oneself_icon3.png'></image> -->
+         <view class='item_txt'>实名认证</view>
+      </view>
+      <view class='toptab_item {{curIndex == 4?"on":""}}' bindtap='toptab'  data-index='4'>
+         <!-- <image wx:if="{{curIndex == 4}}" src='../../../../images/oneself_icon4on.png'></image>
+         <image wx:else src='../../../../images/oneself_icon4.png'></image> -->
+         <view class='item_txt'>卷中心</view>
+      </view>
+   </view>
+   <view class='form' wx:if="{{curIndex==3}}">
+   <form bindsubmit='formSubmit'>
+      <view class='form_item'>
+          <text class='label'>姓名</text>
+          <input type='text' placeholder='请输入姓名' placeholder-class="placeholderStyle"></input>
+          <text class='red'>*</text>
+      </view>
+      <view class='form_item'>
+          <text  class='label'>所在地区</text>
+          <input type='text' placeholder='省、市、区、县' placeholder-class="placeholderStyle"></input>
+          <text  class='red'>*</text>
+      </view>
+      <view class='form_item'>
+          <text  class='label'>手机号</text>
+          <input type='text' placeholder='请输入手机号' placeholder-class="placeholderStyle"></input>
+          <text class='red'>*</text>
+      </view>
+      <view class='form_item'>
+          <text  class='label'>验证码</text>
+          <input type='text' placeholder='请输入验证码' placeholder-class="placeholderStyle" class='yazh'></input>
+          <button>获取验证码</button>
+      </view>
+      <view class='form_item card_item'>
+          <text  class='label'>营业执照</text>
+          <view class='card'>
+              <view class='updata'></view>
+          </view>
+          <text class='red'>*</text>
+      </view>
+      <view class='form_item form_xx'>
+        <view class='checkbox'>
+            <checkbox checked='{{checked}}' />
+            我已阅读并同意<text bindtap='clause'>《服务条款协议》</text>
+        </view>
+      </view>
+      <view class="btn_area">
+         <button form-type="submit">确认</button>
+      </view>
+   </form>
+   </view>
+   <!--券中心-->
+   <view class='qiye' wx:if="{{curIndex == 4}}">
+     <view class='coupon'>
+         <view class='nothing'wx:if="{{nothingStore}}">
+          <image src='../../../../images/nothing.png'></image>
+          <text>抱歉，你还没有收藏简历！</text>
+         </view>
+         <view class='coupon_box'  wx:else>
+            <view class='coupon_list'>
+                <view class='coupon_item'>
+                    <view class='coupon_left'><image src='../../../../images/pic3.png'></image></view>
+                    <view class='coupon_right'>
+                      <view class='coupon_tit'>樱桃拿铁咖啡</view>
+                      <view class='coupon_time'>2019.04.01-2019.04.15</view>
+                      <view class='coupon_money'>￥48</view>
+                    </view>
+                    <view class='circle_left'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                    <view class='circle_right'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                </view>
+
+                <view class='coupon_item'>
+                    <view class='coupon_left'><image src='../../../../images/pic3.png'></image></view>
+                    <view class='coupon_right'>
+                      <view class='coupon_tit'>樱桃拿铁咖啡</view>
+                      <view class='coupon_time'>2019.04.01-2019.04.15</view>
+                      <view class='coupon_money'>￥48</view>
+                    </view>
+                    <view class='circle_left'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                    <view class='circle_right'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                </view>
+                <view class='coupon_item'>
+                    <view class='coupon_left'><image src='../../../../images/pic3.png'></image></view>
+                    <view class='coupon_right'>
+                      <view class='coupon_tit'>樱桃拿铁咖啡</view>
+                      <view class='coupon_time'>2019.04.01-2019.04.15</view>
+                      <view class='coupon_money'>￥48</view>
+                    </view>
+                    <view class='circle_left'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                    <view class='circle_right'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                </view>
+                <view class='coupon_item'>
+                    <view class='coupon_left'><image src='../../../../images/pic3.png'></image></view>
+                    <view class='coupon_right'>
+                      <view class='coupon_tit'>樱桃拿铁咖啡</view>
+                      <view class='coupon_time'>2019.04.01-2019.04.15</view>
+                      <view class='coupon_money'>￥48</view>
+                    </view>
+                    <view class='circle_left'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                    <view class='circle_right'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                </view>
+                <view class='coupon_item'>
+                    <view class='coupon_left'><image src='../../../../images/pic3.png'></image></view>
+                    <view class='coupon_right'>
+                      <view class='coupon_tit'>樱桃拿铁咖啡</view>
+                      <view class='coupon_time'>2019.04.01-2019.04.15</view>
+                      <view class='coupon_money'>￥48</view>
+                    </view>
+                    <view class='circle_left'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                    <view class='circle_right'>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                        <text></text>
+                    </view>
+                </view>
+                <view class='quan_btn'><button type='button' bindtap="goAddQuan">制作</button></view>
+            </view>
+
+            <view class='add_quan {{addQuan?"active":""}}' >
+               <view class='addquan_box'>
+                    <view class='add_item'>
+                       <view class='item_img' bindtap='itemUpImg'><image src='{{itemImg}}'></image></view>
+                       <view class='item_r'>
+                          <view class='item_name'><input type='text' placeholder='添加产品名称' value='' placeholder-class='placeholderClass'/></view>
+                          <view class='item_time'>
+                             <view class='item_stime'>
+                                <picker mode="date" bindchange="StimeChange" value="{{itemStime}}" start="{{newTime}}">
+                                  <view class="picker">
+                                      {{itemStime?itemStime:"开始时间"}}
+                                  </view>
+                                </picker>
+                             </view> - 
+                             <view class='item_etime'>
+                                <picker mode="date" bindchange="EtimeChange" value="{{itemEtime}}" start="{{newTime}}">
+                                  <view class="picker">
+                                      {{itemEtime?itemEtime:"结束时间"}}
+                                  </view>
+                                </picker>
+                             </view>
+                          </view>
+                       </view>
+                    </view>
+                    <view class='line'>
+                      <view class='item_cirlceleft item_cirle'></view>
+                      <view class='item_cirlceright item_cirle'></view>
+                    </view>
+                    <view class='item_price'>
+                        <view class='item_leftprice'><text>￥</text><input type='text' placeholder='添加价格' value='' placeholder-class='placeholderPrice'></input></view>
+                        <view class='item_num'>
+                          <text class='reduce'>-</text>
+                          <text class='number'>{{number}}</text>
+                          <text class='add'>+</text>
+                        </view>
+                    </view>
+                    <view class='circle_box'>
+                        <view class='item_cirle item_cirletl'></view>
+                        <view class='item_cirle item_cirletr'></view>
+                        <view class='item_cirle item_cirlebl'></view>
+                        <view class='item_cirle item_cirlebr'></view>
+                    </view>
+               </view>
+               <view class='addquan_btn'><button type='button' bindtap="goAddQuan">确定</button></view> 
+            </view>
+         </view>
+     </view> 
+      
+   </view>
+   <!--简历清单-->
+   <view class='zw_box' wx:if="{{curIndex==2}}">
+      <view class='zw_tab'>
+          <view class='qd_tab {{qdIndex == 1?"active":""}}' data-index="1" bindtap="qdTab">已收藏简历</view>
+          <view class='qd_tab {{qdIndex == 2?"active":""}}' data-index="2" bindtap="qdTab">已购简历</view>
+          <view class='qd_tab {{qdIndex == 3?"active":""}}' data-index="3" bindtap="qdTab">已投简历</view>
+      </view>
+      <view class='zw_con' wx:if="{{qdIndex == 1}}">
+        <view class='nothing'wx:if="{{nothingStore}}">
+          <image src='../../../../images/nothing.png'></image>
+          <text>抱歉，你还没有收藏简历！</text>
+        </view>
+        <view class='zw_store' wx:else>
+          <view class='zw_list'>
+            <view class='zw_top'>
+                <view class='zw_name'>新媒体运营<text>全职</text></view>
+                <view class='zw_money'>5k-8k</view>
+            </view>
+            <view class='zw_company'>西安猫电网络科技有限公司</view>
+            <view class='zw_tag'><text>西安 碑林区 南稍门</text><text>3-5年</text><text>本科</text></view>
+            <view class='zw_peo qiye_box'>
+                <view class='hr_box'>
+                  <view class='zw_peo_img'><image src='../../../../images/headimg.png'></image></view>
+                  <view class='zw_peo_name'><text>张迪</text>·<text>HR</text></view>
+                </view>
+                <view class='qiye_btn'><text>购买</text></view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='zw_con' wx:if="{{qdIndex == 2}}">
+        <view class='nothing'wx:if="{{nothingStore}}">
+          <image src='../../../../images/nothing.png'></image>
+          <text>抱歉，你还没有已购简历！</text>
+        </view>
+        <view class='zw_buyed' wx:else>
+          <view class='zw_list'>
+            <view class='zw_top'>
+                <view class='zw_name'>新媒体运营<text>全职</text></view>
+                <view class='zw_money'>5k-8k</view>
+            </view>
+            <view class='zw_company'>西安猫电网络科技有限公司</view>
+            <view class='zw_tag'><text>西安 碑林区 南稍门</text><text>3-5年</text><text>本科</text></view>
+            <view class='zw_peo qiye_box'>
+                <view class='hr_box'>
+                  <view class='zw_peo_img'><image src='../../../../images/headimg.png'></image></view>
+                  <view class='zw_peo_name'><text>张迪</text>·<text>HR</text></view>
+                </view>
+                <view class='qiye_btn'><text>去初现</text></view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='zw_con' wx:if="{{qdIndex == 3}}">
+        <view class='nothing'wx:if="{{nothingGet}}">
+          <image src='../../../../images/nothing.png'></image>
+          <text>抱歉，你还收到已投简历！</text>
+        </view>
+        <view class='zw_get' wx:else>
+          <view class='zw_list'>
+            <view class='zw_top'>
+                <view class='zw_name'>新媒体运营<text>全职</text></view>
+                <view class='zw_money'>5k-8k</view>
+            </view>
+            <view class='zw_company'>西安猫电网络科技有限公司</view>
+            <view class='zw_tag'><text>西安 碑林区 南稍门</text><text>3-5年</text><text>本科</text></view>
+            <view class='zw_peo qiye_box'>
+                <view class='hr_box'>
+                  <view class='zw_peo_img'><image src='../../../../images/headimg.png'></image></view>
+                  <view class='zw_peo_name'><text>张迪</text>·<text>HR</text></view>
+                </view>
+                <view class='qiye_btn'><text>购买</text></view>
+            </view>
+          </view>
+        </view>
+      </view>
+   </view>
+   <view class='resume' wx:if="{{curIndex==1}}">
+    <view class='make_tab'>
+        <view class='cv_tab {{tabIndex == 1?"on":""}}' bindtap='cvTab' data-index="1">视频招聘</view>
+        <view class='cv_tab {{tabIndex == 2?"on":""}}' bindtap='cvTab' data-index="2">文字招聘</view>
+    </view>
+    <view class='resume_con' wx:if="{{tabIndex == 1}}">
+       <view class='resume_video'>
+          <image src='../../../../images/resume/img21.jpg'></image>
+          <view class='resume_btnbox'>
+              <view class='resume_button' bindtap='goCamera'>去拍摄</view>
+          </view>
+       </view>
+    </view>
+    <view class='resume_con' wx:if="{{tabIndex == 2}}">
+      
+        <!--基本信息-->
+        <view class='info_card'>
+          <view class='info_cardbox'>
+              <view class='info_rtxt gray'>
+                  <view class='user_name'><input type='text' value='' placeholder='企业名称'></input></view>
+                  <view class='addr'>
+                    <view class='text'>
+                      <picker bindchange="SexyChange" value="{{index}}" range="{{sexy}}">
+                        <view class="picker">
+                            {{sexy[index]?sexy[index]:"企业规模"}}
+                        </view>
+                      </picker>
+                    </view>
+                    <view  class='text'>
+                      <view class='' bindtap='translate'>{{selectedTrade?selectedTrade:'行业'}}</view>
+                      <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+                        <view class="animation-element" animation="{{animation}}">
+                            <view class='trade'>
+                                <view class='trade_hd' >行业</view>
+                                <view class='trade_bd'>
+                                    <view class='list_box {{trade[index].selected?"on":""}}' wx:for="{{trade}}" wx:key="{{index}}" bindtap='selectTrade' data-index="{{index}}">{{trade[index].name}}</view>
+                                </view>
+                            </view>
+                            <view class='buttom'>
+                              <view class="animation-reset" >重置</view>
+                              <view class="animation-button" bindtap="success">确定</view>
+                            </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+              </view>
+              <view class='info_img' bindtap='updateImg'><image src='{{imgSrc}}'></image></view>
+          </view>
+          <!-- 公司介绍 -->
+          <view class='intro'>
+            <view class='tit'>公司介绍</view>
+            <!-- <view class='intro_txt'>
+                <textarea placeholder='请在此输入公司详细介绍'></textarea>
+            </view> -->
+          </view>
+        </view>
+        <!-- 找聘岗位 -->
+        <view class='info_card mt20'>
+           <view class='tit'>招聘岗位</view>
+           <view class='gw mt20'>
+              <view bindtap='selectGw' class='selectGw'>
+                   <view bindtap='post'>{{post?post:'求职岗位'}}</view>
+                   <view class='layer {{isShow?"isRuleShow":"isRuleHide"}}'>
+                       <view  class='position' animation="{{animationData}}" >
+                           <view class='position_all'>
+                              <view class='position_hd black'>岗位</view>
+                              <view class='position_bd'>
+                                 <view class='position_box'>
+                                     <view class='position_tit black'><text>文职类助理</text><text data-index="1" bindtap='downMenu'>全部</text></view>
+                                     <view class='position_con' style='height:{{height}}' >
+                                        <view class='p_list'>总裁助理</view>
+                                        <view class='p_list'>董事长助理</view>
+                                        <view class='p_list'>总经理助理</view>
+                                        <view class='p_list'>总裁助理</view>
+                                        <view class='p_list'>董事长助理</view>
+                                        <view class='p_list'>总经理助理</view>
+                                     </view>
+                                 </view>
+                                 <view class='position_box'>
+                                     <view class='position_tit black'><text>销售类助理</text><text  data-index="2" bindtap='downMenu'>全部</text></view>
+                                     <view class='position_con'>
+                                        <view class='p_list'>商务助理</view>
+                                        <view class='p_list'>市场助理</view>
+                                        <view class='p_list'>销售助理</view>
+                                     </view>
+                                 </view>
+                                 <view class='position_box'>
+                                     <view class='position_tit black'><text>技能类助理</text><text data-index="3" bindtap='downMenu'>全部</text></view>
+                                     <view class='position_con'>
+                                        <view class='p_list'>设计师助理</view>
+                                        <view class='p_list'>研发助理</view>
+                                        <view class='p_list'>Web前端助理</view>
+                                     </view>
+                                 </view>
+                                
+                              </view>
+                              <view class='buttom'>
+                                <view class="animation-reset" >重置</view>
+                                <view class="animation-button" bindtap="pBtn">确定</view>
+                              </view>
+                            </view>
+                       </view>
+                    </view>
+              </view>
+              <view bindtap='selectXz' class='selectXz'>
+              <picker bindchange="bindXzChange" value="{{key}}" range="{{wages}}">
+                 <view class='picker'>
+                    {{wages[key]?wages[key]:"薪资范围"}}
+                 </view>
+              </picker>
+              </view>
+           </view>
+           <!--企业位置 经验要求 学历-->
+           <view class='flag'>
+              <view class='c_wz flag_item'>
+                <view class='wz_tit'>企业位置</view>
+              </view>
+              <view class='c_jy flag_item'>
+                <picker bindchange="yearsChange" value='{{y}}' range='{{years}}'>
+                   <view class='picker'>{{years[y]?years[y]:"经验要求"}}</view>
+                </picker>
+              </view>
+              <view class='c_xl flag_item'>
+                <picker bindchange="eduChange" value='{{e}}' range='{{edu}}'>
+                   <view class='picker'>{{edu[e]?edu[e]:"学历"}}</view>
+                </picker>
+              </view>
+           </view>
+           <!--技能要求及职位要求-->
+           <view class='c_box'>
+               <view class='c_jn'>
+                  <view class='c_tit'>技能要求</view>
+                  <view class='c_bd'>
+                    <textarea placeholder="1.要求本科毕业生，优秀者可放宽条件."></textarea>
+                  </view>
+               </view>
+               <view class='c_ms'>
+                  <view class='c_tit'>职位描述</view>
+                  <view class='c_bd'>
+                    <textarea placeholder="1.管理客户关系，完成销售认为;"></textarea>
+                  </view>
+               </view>
+           </view>
+           <view class='edit' bindtap='editInfo'>编辑</view>
+        </view>
+        <view class='add_card mt20'>
+           <view class='add_box' bindtap='addItem'></view>
+        </view>
+        <!-- <view class='subBtn'>
+           <button type='primary'>确定</button>
+        </view> -->
+        
+    </view>
+  </view>
+</view>

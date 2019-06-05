@@ -1,0 +1,93 @@
+
+    <view class='container'>
+      <video id='myVideo' src='{{vsrc[vid].url}}'
+       controls="{{false}}" 
+       show-center-play-btn='{{false}}' 
+       show-play-btn='{{false}}' 
+       class='canvas' 
+       show-progress='{{false}}' 
+       loop='{{true}}' 
+       objectFit='cover' 
+       autoplay='{{autoplay}}' 
+       enable-progress-gesture='{{false}}' 
+       bindtouchstart='touchstart'
+    bindtouchmove='touchmove' 
+    bindtouchend='touchend' 
+    bindtouchcancel='touchcancel' bindtap='play' bindtimeupdate='timeupdate' bindplay='bindPlay' bindpause='bindPause' bindended='bindEnded' poster='{{vsrc[vid].picture}}'> 
+      <!-- 右侧区域  -->
+        <cover-view class='content'>
+          <cover-view class='content_r'>
+            <cover-view class='content_img centre'  catchtap='show' data-id="{{vsrc[vid].user_id}}">
+             <cover-image src='{{vsrc[vid].head_img}}' wx:if="{{vsrc[vid].head_img != ''}}"></cover-image>
+              <cover-image class='img_add' src='../../../images/resume/img19.png'></cover-image>
+              <cover-view class='img_text'>距你1km</cover-view>
+            </cover-view>
+            <cover-view  class='content_img2 centre'>
+              <cover-image src='../../../images/resume/img20.png'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite '>初现</cover-view>
+              </cover-view >
+            </cover-view >
+            <cover-view  class='content_img2 centre'>
+              <cover-image src='../../../images/resume/img22.png'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite'>{{vsrc[vid].play_num}}</cover-view>
+              </cover-view >
+            </cover-view >
+            <cover-view  class='content_img2 centre'>
+              <cover-image src='../../../images/resume/img23.png'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite'>分享</cover-view>
+              </cover-view >
+              <button open-type='share'></button>
+            </cover-view >
+            <cover-view  class='content_img2 centre' catchtap='handle' data-index="{{}}" data-fav="{{vsrc[vid].fav_state}}">
+              <cover-image src='../../../images/resume/img24.png'  wx:if='{{vsrc[vid].fav_state==0}}'></cover-image>
+              <cover-image src='../../../images/resume/img44.png'  wx:if='{{vsrc[vid].fav_state==1}}'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite'>收藏</cover-view>
+              </cover-view >
+            </cover-view >
+            <cover-view class='content_img2 centre'>
+              <cover-image src='../../../images/resume/img25.png'></cover-image>
+              <cover-view class='content_text'>
+                <cover-view class='sameWhite'>举报</cover-view>
+              </cover-view>
+            </cover-view>
+          </cover-view >
+          
+        </cover-view >
+
+        <cover-view class='bottom'>
+          <cover-view class='bottom_text'>
+            <cover-view>@{{vsrc[vid].nickname}}</cover-view>
+          </cover-view>
+
+          <cover-view class='bottom_text bottom_text2'>
+            <cover-view>{{vsrc[vid].content}}</cover-view>
+          </cover-view>
+
+          <cover-view class='bottom_text'>
+            <cover-image src='../../../images/resume/img26.png'></cover-image>
+            <cover-view class='bot_txt'>@{{vsrc[vid].nickname}}</cover-view>
+          </cover-view>
+        </cover-view>
+       
+        <cover-view class='top'>
+          <cover-image class='back' src='../../../images/resume/img16.png' catchtap='goBack'></cover-image>
+        </cover-view>
+    
+
+        <!-- 暂停播放按钮  -->
+        <cover-view class='icon-box' catchtap='play'>
+          <cover-image class="icon-play" src='../../../images/resume/play.png' hidden='{{isPlay}}'></cover-image>
+        </cover-view>
+
+        <!--进度条 -->
+         <cover-view class="jindu-back"></cover-view>
+         <cover-view class="jindu" style='width: {{percent}}%'></cover-view>
+
+    </video>
+    </view>
+
+

@@ -1,0 +1,14 @@
+/* pages/user/wallet/wallet.wxss */
+page{height:100%;background: #f2f2f2;width:100%;}
+.container{height:100%;overflow: hidden;display: block;}
+.wallet_box{padding-top:150rpx;text-align: center;position: relative;}
+.wallet_box image{width:100rpx;height:100rpx;}
+.wallet_box .zd{position: absolute;right:50rpx;top:50rpx;}
+.wallet_box .zd image{width:30rpx;height: 39rpx;vertical-align: middle;margin-right:10rpx;margin-top:-10rpx;}
+.wallet_box .zd text{font-size:30rpx;}
+.my_wallet{margin-top:50rpx;}
+.my_wallet_tit{font-size:26rpx;color:#666;margin-bottom:5rpx;}
+.my_money{font-size:70rpx;font-weight: bold;color:#333;}
+.recharge{margin-top:300rpx;text-align: center;}
+.recharge button{width:400rpx;height:80rpx;line-height: 80rpx;background: transparent;border:1rpx solid #ff0470;color:#ff0470;font-size: 36rpx;}
+.recharge button:first-child{margin-bottom:35rpx;background: #ff0470;color:#fff;}

@@ -1,0 +1,44 @@
+
+<map id="myMap" style="width: {{mapWidth}}rpx; height: {{mapHeight}}rpx;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" show-location bindmarkertap="selectMarket" include-points="{{markers}}" bindmarkertap="toaddress" >
+   <view class='footer'>
+      <view class='footer_box'>
+        <view class='footer_img'>
+          <image src='../../../images/resume/img27.png'></image>
+        </view>
+        <view class='footer_text'>
+          <text>简历</text>
+        </view>
+      </view>
+      <view class='footer_box'>
+        <view class='footer_img'>
+          <image src='../../../images/resume/img28.png'></image>
+        </view>
+        <view class='footer_text'>
+          <text>企业</text>
+        </view>
+      </view>
+       <view class='footer_box footer_box_none'>
+        <view class='footer_img footer_add'>
+          <image src='../../../images/resume/img31.png'></image>
+        </view>
+      
+      </view>
+      <view class='footer_box'>
+        <view class='footer_img'>
+          <image src='../../../images/resume/img29.png'></image>
+        </view>
+        <view class='footer_text'>
+          <text>VIP</text>
+        </view>
+      </view>
+      <view class='footer_box'>
+        <view class='footer_img'>
+          <image src='../../../images/resume/img35.jpg'></image>
+        </view>
+        <view class='footer_text'>
+          <text>我的</text>
+        </view>
+      </view>
+     
+    </view>
+</map>

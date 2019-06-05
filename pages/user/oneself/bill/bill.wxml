@@ -1,0 +1,103 @@
+<view class="container">
+    <view class='bill_top'>
+       <view class='months'>
+           <picker mode="date" value='{{date}}' fields="month"  bindchange="bindDateChange">
+              <view class='picker'>{{date}}</view>
+           </picker>
+       </view>
+       <view class='budget'>
+           <view class='zc'>支出 ￥{{zc}}</view>
+           <view class='sr'>收入 ￥{{sr}}</view>
+       </view>
+    </view>
+    <view class='bill_bd'>
+        <view class='bill_list'>
+            <view class='list_left'>
+               <image src='../../../../images/headimg.png'></image>
+               <view class='l_left_txt'>
+                   <view class='txt_n'>西安猫电网络科技有限公司</view>
+                   <view class='txt_c'><text class='back' wx:if="{{identity == 1}}">返佣</text><text class='buy' wx:else>购买</text></view>
+                   <view class='txt_t'>04-13 12:37</view>
+               </view>
+            </view>
+            <view class='list_right'><text class="add" wx:if="{{identity==1}}">+</text><text class="redu" wx:else>-</text><text class='money' >30.00</text></view>
+        </view>
+        <view class='bill_list'>
+            <view class='list_left'>
+               <image src='../../../../images/headimg.png'></image>
+               <view class='l_left_txt'>
+                   <view class='txt_n'>西安猫电网络科技有限公司</view>
+                   <view class='txt_c'><text class='back' wx:if="{{identity == 1}}">返佣</text><text class='buy' wx:else>购买</text></view>
+                   <view class='txt_t'>04-13 12:37</view>
+               </view>
+            </view>
+            <view class='list_right'><text class="add" wx:if="{{identity==1}}">+</text><text class="redu" wx:else>-</text><text class='money' >30.00</text></view>
+        </view>
+        <view class='bill_list'>
+            <view class='list_left'>
+               <image src='../../../../images/headimg.png'></image>
+               <view class='l_left_txt'>
+                   <view class='txt_n'>西安猫电网络科技有限公司</view>
+                   <view class='txt_c'><text class='back' wx:if="{{identity == 1}}">返佣</text><text class='buy' wx:else>购买</text></view>
+                   <view class='txt_t'>04-13 12:37</view>
+               </view>
+            </view>
+            <view class='list_right'><text class="add" wx:if="{{identity==1}}">+</text><text class="redu" wx:else>-</text><text class='money' >30.00</text></view>
+        </view>
+        <view class='bill_list'>
+            <view class='list_left'>
+               <image src='../../../../images/headimg.png'></image>
+               <view class='l_left_txt'>
+                   <view class='txt_n'>西安猫电网络科技有限公司</view>
+                   <view class='txt_c'><text class='back' wx:if="{{identity == 1}}">返佣</text><text class='buy' wx:else>购买</text></view>
+                   <view class='txt_t'>04-13 12:37</view>
+               </view>
+            </view>
+            <view class='list_right'><text class="add" wx:if="{{identity==1}}">+</text><text class="redu" wx:else>-</text><text class='money' >30.00</text></view>
+        </view>
+        <view class='bill_list'>
+            <view class='list_left'>
+               <image src='../../../../images/headimg.png'></image>
+               <view class='l_left_txt'>
+                   <view class='txt_n'>西安猫电网络科技有限公司</view>
+                   <view class='txt_c'><text class='back' wx:if="{{identity == 1}}">返佣</text><text class='buy' wx:else>购买</text></view>
+                   <view class='txt_t'>04-13 12:37</view>
+               </view>
+            </view>
+            <view class='list_right'><text class="add" wx:if="{{identity==1}}">+</text><text class="redu" wx:else>-</text><text class='money' >30.00</text></view>
+        </view>
+        <view class='bill_list'>
+            <view class='list_left'>
+               <image src='../../../../images/headimg.png'></image>
+               <view class='l_left_txt'>
+                   <view class='txt_n'>西安猫电网络科技有限公司</view>
+                   <view class='txt_c'><text class='back' wx:if="{{identity == 1}}">返佣</text><text class='buy' wx:else>购买</text></view>
+                   <view class='txt_t'>04-13 12:37</view>
+               </view>
+            </view>
+            <view class='list_right'><text class="add" wx:if="{{identity==1}}">+</text><text class="redu" wx:else>-</text><text class='money' >30.00</text></view>
+        </view>
+        <view class='bill_list'>
+            <view class='list_left'>
+               <image src='../../../../images/headimg.png'></image>
+               <view class='l_left_txt'>
+                   <view class='txt_n'>西安猫电网络科技有限公司</view>
+                   <view class='txt_c'><text class='back' wx:if="{{identity == 1}}">返佣</text><text class='buy' wx:else>购买</text></view>
+                   <view class='txt_t'>04-13 12:37</view>
+               </view>
+            </view>
+            <view class='list_right'><text class="add" wx:if="{{identity==1}}">+</text><text class="redu" wx:else>-</text><text class='money' >30.00</text></view>
+        </view>
+        <view class='bill_list'>
+            <view class='list_left'>
+               <image src='../../../../images/headimg.png'></image>
+               <view class='l_left_txt'>
+                   <view class='txt_n'>西安猫电网络科技有限公司</view>
+                   <view class='txt_c'><text class='back' wx:if="{{identity == 1}}">返佣</text><text class='buy' wx:else>购买</text></view>
+                   <view class='txt_t'>04-13 12:37</view>
+               </view>
+            </view>
+            <view class='list_right'><text class="add" wx:if="{{identity==1}}">+</text><text class="redu" wx:else>-</text><text class='money' >30.00</text></view>
+        </view>
+    </view>
+</view>

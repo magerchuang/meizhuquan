@@ -1,0 +1,431 @@
+
+    <view class='container'>
+      <video id='myVideo' src='{{vsrc[vid].url}}'
+       controls="{{false}}" 
+       show-center-play-btn='{{false}}' 
+       show-play-btn='{{false}}' 
+       class='canvas' 
+       show-progress='{{false}}' 
+       loop='{{true}}' 
+       objectFit='cover' 
+       autoplay='{{autoplay}}' 
+       enable-progress-gesture='{{false}}' 
+       bindtouchstart='touchstart'
+    bindtouchmove='touchmove' 
+    bindtouchend='touchend' 
+    bindtouchcancel='touchcancel' bindtap='play' bindtimeupdate='timeupdate' bindplay='bindPlay' bindpause='bindPause' bindended='bindEnded'> 
+<!--
+
+     送券
+    <view class='{{styleClass}}'>
+      <view class='stamps_hide' bindtap='hide_cu'>
+        <image src='../../../images/resume/img32.png'></image>
+      </view>
+      <view class='stamps_title'>免费体验券</view>
+      <scroll-view class='stamps_content_box' scroll-y style="height: 80%;">
+        <view class='scroll-view-item_stamps'>
+          <view class='stamps_content'>
+          <view class='radio'>
+             <checkbox checked='{{checked}}' />
+          </view>
+          <view class='stamps_content_r'>
+            <image src='../../../images/resume/img34.png'></image>
+            <image src='../../../images/resume/img35.png'></image>
+            <view class='stamps_content_r_text'>
+              <text>樱桃拿铁咖啡</text>
+            </view>
+            <view class='stamps_content_r_time'>
+              <text>2019.04.01-2019.04.15</text>
+            </view>
+            <view class='stamps_content_r_money'>
+              ￥<text>30</text>
+            </view>
+          </view>
+        </view>
+        <view class='stamps_content'>
+        <view class='radio'>
+             <checkbox checked='{{checked}}' />
+          </view>
+          <view class='stamps_content_r'>
+            <image src='../../../images/resume/img34.png'></image>
+            <image src='../../../images/resume/img35.png'></image>
+            <view class='stamps_content_r_text'>
+              <text>樱桃拿铁咖啡</text>
+            </view>
+            <view class='stamps_content_r_time'>
+              <text>2019.04.01-2019.04.15</text>
+            </view>
+            <view class='stamps_content_r_money'>
+              ￥<text>30</text>
+            </view>
+          </view>
+        </view>
+        <view class='stamps_content'>
+         <view class='radio'>
+             <checkbox checked='{{checked}}' />
+          </view>
+          <view class='stamps_content_r'>
+            <image src='../../../images/resume/img34.png'></image>
+            <image src='../../../images/resume/img35.png'></image>
+            <view class='stamps_content_r_text'>
+              <text>樱桃拿铁咖啡</text>
+            </view>
+            <view class='stamps_content_r_time'>
+              <text>2019.04.01-2019.04.15</text>
+            </view>
+            <view class='stamps_content_r_money'>
+              ￥<text>30</text>
+            </view>
+          </view>
+        </view>
+        <view class='stamps_content'>
+          <view class='radio'>
+             <checkbox checked='{{checked}}' />
+          </view>
+          <view class='stamps_content_r'>
+            <image src='../../../images/resume/img34.png'></image>
+            <image src='../../../images/resume/img35.png'></image>
+            <view class='stamps_content_r_text'>
+              <text>樱桃拿铁咖啡</text>
+            </view>
+            <view class='stamps_content_r_time'>
+              <text>2019.04.01-2019.04.15</text>
+            </view>
+            <view class='stamps_content_r_money'>
+              ￥<text>30</text>
+            </view>
+          </view>
+        </view>
+        <view class='stamps_content'>
+          <view class='radio'>
+             <checkbox checked='{{checked}}' />
+          </view>
+          <view class='stamps_content_r'>
+            <image src='../../../images/resume/img34.png'></image>
+            <image src='../../../images/resume/img35.png'></image>
+            <view class='stamps_content_r_text'>
+              <text>樱桃拿铁咖啡</text>
+            </view>
+            <view class='stamps_content_r_time'>
+              <text>2019.04.01-2019.04.15</text>
+            </view>
+            <view class='stamps_content_r_money'>
+              ￥<text>30</text>
+            </view>
+          </view>
+        </view>
+        </view>
+        
+      </scroll-view>
+      <view class='stamps_btn'>确定</view>
+    </view>
+    筛选 
+    <view class='{{fstyleClass}}'>
+      <view class='filtrate'>
+        <view class='filtrate_top'>
+          美助圈
+          <image src='../../../images/resume/img36.png'></image>
+          <text>西安市碑林区南稍门中贸广场...</text>
+          <view class='filtrate_radio'>
+            <view class='filtrate_radio_text {{curIndex == 1?"filtrate_active":""}}' bindtap='tab_radio' data-index='1'>男
+              <image src='../../../images/resume/img37.png'></image>
+            </view>
+             <view class='filtrate_radio_text {{curIndex == 2?"filtrate_active":""}}' bindtap='tab_radio' data-index='2'>女
+              <image src='../../../images/resume/img38.png'></image>
+            </view>
+          </view>
+       
+          <block wx:for="{{category}}" wx:for-item="value" wx:for-index="idx" >
+         年龄
+          <view class='filtrate_age'>
+            <view class='filtrate_age_text'>{{value.title}}
+              <view class='more_img' wx:if="{{value.sub.length>6}}" data-i="{{idx}}" data-on="{{show[idx]}}" bindtap="more">
+                全部<image src='../../../images/resume/img39.png'></image>
+              </view>
+            </view>
+            <view class='filtrate_age_text_num {{show[idx]?"":"auto_height"}}'>
+             二级类
+              <checkbox-group bindchange="checkboxChange{{idx}}">
+              <label class="{{item.checked?'checkbox checked':'checkbox'}} {{item.disabled?'disabled':''}}" bindtap='checkbox' wx:for="{{value.sub}}" data-idx="{{idx}}" data-index="{{index}}" wx:key="item.title" data-disabled="{{item.disabled}}">
+              <checkbox value="{{item.id}}" checked="{{item.checked}}"/>
+              {{item.title}}
+              </label>
+              </checkbox-group>
+            </view>
+          </view>
+          </block>
+   
+         
+          <view class='{{btn}}'>
+            <button class='{{button_num == 1?"btn_active":""}}' data-index='1 'bindtap='btn_reset'>重置</button>
+            <button class='{{button_num == 2?"btn_active":""}}' data-index='2 'bindtap='btn_submit'>确定</button>
+          </view>
+        </view>
+      </view>
+      筛选的个数
+      <view class='{{yc_num}}'>
+        <view class='filtrate_img'>
+          <image src='../../../images/resume/img42.png'></image>
+        </view>
+        <view class='filtrate_text'>
+          <text>筛选个数不能超过5哦~</text>
+        </view>
+      </view>
+    </view>
+ 文字简历
+    <view class='{{wstyleClass}}'>
+      <view class='wz_resume_hide' bindtap='hide_wz'>
+        <image src='../../../images/resume/img32.png'></image>
+      </view>
+      <view class='wz_resume_title'>
+        <view class='wz_img'>
+          <image src='../../../images/headimg.png'></image>
+        </view>
+        <view class='wz_text'>
+          <text>马云云</text>
+          <image src='../../../images/resume/img40.png'></image>
+           <text>20岁 本科</text>
+        </view>
+      </view>
+      <scroll-view scroll-y style="height: 70%;">
+        <view class="scroll-view-item">
+            <view class='wz_resume_bottom'>
+          <view class='wz_resume_bottom_one'>
+            <image src='../../../images/icon_bb.png'></image>
+            工作经历</view>
+          <view class='wz_resume_bottom_two'>
+            <image src='../../../images/resume/img41.jpg'></image>
+            2017/08 - 2018/09</view>
+          <view class='wz_resume_bottom_three'>西安猫电网络科技有限公司</view>
+          <view class='wz_resume_bottom_four'>总裁助理</view>
+        </view>
+       <view class='wz_resume_bottom'>
+        <view class='wz_resume_bottom_one'>
+          <image src='../../../images/icon_plane.png'></image>
+        求职意向</view>
+        <view class='wz_resume_bottom_two'>
+          <image src='../../../images/resume/img41.jpg'></image>
+          <text decode="{{true}}">&nbsp;&nbsp;职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能&nbsp;&nbsp;&nbsp;</text>
+          <text>互联网/电子商务/网游</text>
+        </view>
+        <view class='wz_resume_bottom_three'>
+          <text decode="{{true}}">工作地点&nbsp;&nbsp;&nbsp;</text>
+          
+          <text>西安</text>
+        </view>
+        <view class='wz_resume_bottom_four'>
+          <text decode="{{true}}">期望薪资&nbsp;&nbsp;&nbsp;</text>
+          <text>4000-5000</text>
+        </view>
+      </view>
+        <view class='wz_resume_bottom'>
+        <view class='wz_resume_bottom_one'>
+          <image src='../../../images/icon_mz.png'></image>
+        教育经历</view>
+        <view class='wz_resume_bottom_two'>
+          <image src='../../../images/resume/img41.jpg'></image>
+        2016/09-至今
+        </view>
+        <view class='wz_resume_bottom_three'>西安交通大学</view>
+        <view class='wz_resume_bottom_four'>电子商务</view>
+      </view>
+
+        <view class='wz_resume_bottom'>
+        <view class='wz_resume_bottom_one'>
+          <image src='../../../images/icon_mz.png'></image>
+        教育经历</view>
+        <view class='wz_resume_bottom_two'>
+          <image src='../../../images/resume/img41.jpg'></image>
+        2016/09-至今
+        </view>
+        <view class='wz_resume_bottom_three'>西安交通大学</view>
+        <view class='wz_resume_bottom_four'>电子商务</view>
+      </view>
+        </view>
+      </scroll-view> -->
+      <cover-view class='top'>
+          <cover-image class='back' src='../../../images/resume/img16.png'></cover-image>
+          <cover-view class='top_l top_item'>
+            <cover-view class='top_position'>{{city}}</cover-view>
+          </cover-view>
+          <cover-view class='top_c top_item'>
+              <cover-view class='txt_resume' bindtap='wzjl'>招聘信息</cover-view>
+          </cover-view>
+          <cover-view class='top_r top_item'  bindtap='filtrate'>
+            <cover-view class='filter'>筛选</cover-view>
+            <cover-image src='../../../images/resume/img17.png'></cover-image>
+          </cover-view>
+          
+        </cover-view>
+      <!-- 右侧区域  -->
+        <cover-view class='content'>
+          <cover-view class='content_r'>
+            <cover-view class='content_img centre'  catchtap='show' data-id="{{vsrc[vid].user_id}}">
+              <cover-image src='../../../images/headimg.png'></cover-image>
+              <cover-image class='img_add' src='../../../images/resume/img19.png'></cover-image>
+              <cover-view class='img_text'>距你1km</cover-view>
+            </cover-view>
+            <cover-view  class='content_img2 centre'>
+              <cover-image src='../../../images/resume/img20.png'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite '>初现</cover-view>
+              </cover-view >
+            </cover-view >
+            <!-- <cover-view  class='content_img2 centre'  bindtap='stamps'>
+              <cover-image src='../../../images/resume/img21.png'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite'>送券</cover-view>
+              </cover-view >
+            </cover-view > -->
+            <cover-view  class='content_img2 centre'>
+              <cover-image src='../../../images/resume/img22.png'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite'>{{vsrc[vid].play_num}}</cover-view>
+              </cover-view >
+            </cover-view >
+            <cover-view  class='content_img2 centre'>
+              <cover-image src='../../../images/resume/img23.png'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite'>分享</cover-view>
+              </cover-view >
+              <button open-type='share'></button>
+            </cover-view >
+            <cover-view  class='content_img2 centre' catchtap='handle' data-index="{{vid}}" data-fav="{{vsrc[vid].fav_state}}">
+              <cover-image src='../../../images/resume/img24.png'  wx:if='{{vsrc[vid].fav_state==0}}'></cover-image>
+              <cover-image src='../../../images/resume/img44.png'  wx:if='{{vsrc[vid].fav_state==1}}'></cover-image>
+              <cover-view  class='content_text'>
+                <cover-view class='sameWhite'>收藏</cover-view>
+              </cover-view >
+            </cover-view >
+            <cover-view class='content_img2 centre'>
+              <cover-image src='../../../images/resume/img25.png'></cover-image>
+              <cover-view class='content_text'>
+                <cover-view class='sameWhite'>举报</cover-view>
+              </cover-view>
+            </cover-view>
+          </cover-view >
+          
+        </cover-view >
+
+        <cover-view class='bottom'>
+          <cover-view class='bottom_text'>
+            <cover-view>@{{vsrc[vid].nickname}}</cover-view>
+          </cover-view>
+
+          <cover-view class='bottom_text bottom_text2'>
+            <cover-view>{{vsrc[vid].title}}</cover-view>
+          </cover-view>
+
+          <cover-view class='bottom_text'>
+            <cover-image src='../../../images/resume/img26.png'></cover-image>
+            <cover-view class='bot_txt'>@{{vsrc[vid].nickname}}</cover-view>
+          </cover-view>
+        </cover-view>
+       
+       <!-- 文字简历 -->
+       <cover-view class='{{wstyleClass}}'>
+            <cover-view class='wz_resume_hide' catchtap='hide_wz'>
+              <cover-image src='../../../images/resume/img32.png'></cover-image>
+            </cover-view>
+            <cover-view class='wz_resume_title'>
+                <cover-view class='wz_img'>
+                  <cover-image src='../../../images/headimg.png'></cover-image>
+                </cover-view>
+                <cover-view class='wz_text'>
+                  <cover-view>马云云</cover-view>
+                  <cover-view class='wz_txt_r'>
+                    <cover-image src='../../../images/resume/img40.png'></cover-image>
+                    <cover-view>20岁 本科</cover-view>
+                  </cover-view>
+                </cover-view>
+            </cover-view>
+         <cover-view style="height: 70%; overflow:scroll">
+            <cover-view class="scroll-view-item">
+                <cover-view class='wz_resume_bottom'>
+                <cover-view class='wz_resume_bottom_one'>
+                <cover-image src='../../../images/icon_bb.png'></cover-image>
+                  <cover-view>工作经历</cover-view>
+                </cover-view>
+                <cover-view class='wz_resume_bottom_two'>
+                  <cover-image src='../../../images/resume/img41.jpg'></cover-image>
+                  <cover-view>2017/08 - 2018/09</cover-view>
+                  </cover-view>
+                <cover-view class='wz_resume_bottom_three'>西安猫电网络科技有限公司</cover-view>
+                <cover-view class='wz_resume_bottom_four'>总裁助理</cover-view>
+            </cover-view>
+             <cover-view class='wz_resume_bottom'>
+                <cover-view class='wz_resume_bottom_one'>
+                  <cover-image src='../../../images/icon_plane.png'></cover-image>
+                   <cover-view>求职意向</cover-view>
+                </cover-view>
+                <cover-view class='wz_resume_bottom_two'>
+                  <cover-image src='../../../images/resume/img41.jpg'></cover-image>
+                  <cover-view class='label'><cover-view>职</cover-view><cover-view>能</cover-view></cover-view>
+                  <cover-view>互联网/电子商务/网游</cover-view>
+                </cover-view>
+                <cover-view class='wz_resume_bottom_three'>
+                  <cover-view  class='label'>工作地点</cover-view>
+                  <cover-view>西安</cover-view>
+                </cover-view>
+                <cover-view class='wz_resume_bottom_four'>
+                  <cover-view class='label'>期望薪资</cover-view>
+                  <cover-view>4000-5000</cover-view>
+                </cover-view>
+              </cover-view>
+              <cover-view class='wz_resume_bottom'>
+                      <cover-view class='wz_resume_bottom_one'>
+                        <cover-image src='../../../images/icon_mz.png'></cover-image>
+                         <cover-view>教育经历</cover-view>
+                      </cover-view>
+                    <cover-view class='wz_resume_bottom_two'>
+                      <cover-image src='../../../images/resume/img41.jpg'></cover-image>
+                     <cover-view>2016/09-至今</cover-view>
+                    </cover-view>
+              <cover-view class='wz_resume_bottom_three'>西安交通大学</cover-view>
+              <cover-view class='wz_resume_bottom_four'>电子商务</cover-view>
+            </cover-view>
+
+              <cover-view class='wz_resume_bottom'>
+                  <cover-view class='wz_resume_bottom_one'>
+                    <cover-image src='../../../images/icon_mz.png'></cover-image>
+                     <cover-view>教育经历</cover-view>
+                  </cover-view>
+                  <cover-view class='wz_resume_bottom_two'>
+                    <cover-image src='../../../images/resume/img41.jpg'></cover-image>
+                   <cover-view>2016/09-至今</cover-view>
+                  </cover-view>
+              <cover-view class='wz_resume_bottom_three'>西安交通大学</cover-view>
+              <cover-view class='wz_resume_bottom_four'>电子商务</cover-view>
+            </cover-view>
+            </cover-view>
+            </cover-view>
+          </cover-view>
+    
+
+        <!-- 暂停播放按钮  -->
+        <cover-view class='icon-box' bindtap='play'>
+          <cover-image class="icon-play" src='../../../images/resume/play.png' hidden='{{isPlay}}'></cover-image>
+        </cover-view>
+
+        <!--进度条 -->
+         <cover-view class="jindu-back"></cover-view>
+         <cover-view class="jindu" style='width: {{percent}}%'></cover-view>
+
+        <!-- 描述  -->
+        <!-- <cover-view class="desc">
+          <cover-view>
+            <cover-view class="desc-text">{{subject.title}}</cover-view>
+          </cover-view>
+        </cover-view>
+
+        <!-- 底部 -->
+        <!-- <cover-view class="footer">
+          <cover-view class='apply'>
+            <cover-image class="icon" src='/image/add.png' bindtap='apply'></cover-image>
+          </cover-view>
+        </cover-view> -->
+    </video>
+      
+    </view>
+
+

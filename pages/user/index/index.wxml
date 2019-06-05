@@ -1,0 +1,61 @@
+<!--pages/user/index/index.wxml-->
+<view class='container'>
+    <view wx:if="{{user.getAuth}}" class="view-layer" style="height:{{winHeight}}px">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="margin-top:{{winHeight/2-25}}px">授权拉取微信头像及昵称 </button>
+      </view>
+   <view class='my_top'>
+      
+     <view class='user_info'>
+          <view class='info_box'>
+              <view class='info_img'>
+                  <image src="{{user.head_img}}"></image>
+                  <view class='img_covertxt' wx:if="{{}}">企业</view>
+                  <view class='img_covertxt' wx:else>个人</view>
+              </view>
+              <view class='info_txt'>
+                  <view class='info_name'>{{user.nickname}}</view>
+                  <view class='info_identity'>{{user.typeText}}</view>
+              </view>
+          </view>
+      </view>
+      <!-- <view class='my_topbg'><image src="../../../images/my_tbg.jpg"></image></view> -->
+   </view>
+   <view class='list'>
+      <view class='list_item'>
+        <view class='list_txt' bindtap='goWallet'>
+           <image src='../../../images/icon_money.png'></image><text>我的钱包</text>
+        </view>
+      </view>
+      <view class='list_item'>
+        <view class='list_txt' bindtap='goOne'>
+           <image src='../../../images/icon_my.png'></image><text>个人中心</text>
+        </view>
+      </view>
+      <view class='list_item' bindtap='goCom'>
+        <view class='list_txt' >
+            <image src='../../../images/icon_home.png'></image><text>企业中心</text>
+        </view>
+      </view>
+      <view class='list_item'>
+        <view class='list_txt'>
+            <image src='../../../images/icon_plane.png'></image><text>推广中心</text>
+        </view>
+      </view>
+      <view class='list_item'>
+        <view class='list_txt'>
+            <image src='../../../images/icon_rule.png'></image><text>规则说明</text>
+        </view>
+      </view>
+   </view>
+   <!--<view class='info_ewm'>
+      <view class='ewm_title'>
+         分销中心<text wx:if="{{Unauthorized}}">已授权</text><text wx:else>未授权</text>
+      </view>
+      <view class='ewm_desc'>分享二维码可赚利润</view>
+      <view class='ewm_img'>
+        <image src='../../../images/ewm.jpg'></image>
+      </view>
+      <view class='ewm_txt'><text  wx:if="{{!Unauthorized}}">联系商家即可授权</text></view>
+      <view class='ewm_btn'><button type='default'>分享生成海报</button></view>
+   </view>-->
+</view>

@@ -1,0 +1,31 @@
+/* pages/user/oneself/bill/bill.wxss */
+.bill_top{padding:30rpx 0;display: flex;display: -webkit-flex;justify-content: space-between;background: #f2f2f2;height: 128rpx;box-sizing: border-box;position: fixed;top:0;left:0;right: 0;}
+.months{flex: 1;padding:0 30rpx;}
+.months .picker{height:60rpx;font-size:30rpx;background: #fff;line-height: 60rpx;width:140rpx;position:relative;border-radius: 40rpx;padding:0 40rpx;}
+.months .picker:after{border-left: 5px solid transparent; border-right: 5px solid transparent;border-top: 5px solid #000;content: ""; position: absolute; width: 0;right:20rpx;top:50%;transform: translateY(-50%);}
+.budget{flex: 1;padding:0 30rpx;text-align:right;}
+.budget{color:#999999;font-size:26rpx;}
+.bill_bd{padding:128rpx 30rpx 30rpx;}
+.bill_list{display: flex;display: -webkit-flex;padding:30rpx 0;border-bottom:1rpx solid #f2f2f2;justify-content: space-between}
+.list-left{flex: 1;}
+.list_right{width:200rpx;text-align: right;font-size: 32rpx;}
+.list_left{display: flex;width:490rpx;flex-flow: wrap;}
+.list_left image{width:60rpx;height: 60rpx;margin-right: 20rpx;}
+.list_left .l_left_txt{font-size:30rpx;width:430px;flex: 1;}
+.l_left_txt .txt_t{color:#999;font-size:24rpx;}
+.l_left_txt .txt_c{padding:15rpx 0;font-size:26rpx;}
+.l_left_txt .txt_n{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

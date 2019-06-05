@@ -1,0 +1,11 @@
+<!--pages/user/enterprise/skill/skill.wxml-->
+<view class='container'>
+   <form bindsubmit='submit'>
+      <view class='textarea'>
+          <textarea name="textarea" auto-focus="true" placeholder='技能要求'/>
+      </view>
+      <view class="btn_area">
+          <button form-type="submit">确认</button>
+      </view>
+   </form>
+</view>

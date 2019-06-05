@@ -1,0 +1,76 @@
+<view class='container'>
+  <view class='top'>
+    <view class='top_l'>
+      <view class='top_l_img'>
+        <image src='{{message.head_img}}'></image>
+      </view>
+      <view class='top_l_text'>{{message.nickname}}</view>
+    </view>
+    <view class='top_r'>
+      <view class='top_r_title'>
+        <view class='top_fenxiang'>
+          <image src='../../../../images/resume/img10.png'></image>
+        </view>
+        <view class='top_phone'>
+          <image src='../../../../images/resume/img9.png'></image>
+          <text>初视</text>
+        </view>
+        <view class='top_goumai {{buyed?"bgc":""}}'>
+          <text wx:if="{{buyed}}">已购买</text>
+          <text wx:else   bindtap='goBuy'>购买</text>
+        </view>
+      </view>
+      <view class='gmsm {{show?"block":""}}' bindtap='closeBuy'>
+        <view class='gmsm_t'>
+          <text>购买说明</text>
+        </view>
+        <view class='gmsm_b'>
+          <text>*购买简历后，获得可视权，求职者同意初视后即可获得该求职者的全部信息！</text>
+        </view>
+      </view>
+      <view class='top_r_content clearfix'>
+        <text>复试分享</text>
+        <text>手机号：{{phone}}</text>
+        <text bindtap='purchase'>购买说明</text>
+        <image class='top_r_content_img' src='../../../../images/resume/img11.png'></image>
+      </view>
+      <view class='top_r_bottom clearfix'>
+        <image src='../../../../images/resume/img2.png'></image>
+        <image src='../../../../images/resume/img3.png'></image>
+        <image src='../../../../images/resume/img4.png'></image>
+        <image src='../../../../images/resume/img5.png'></image>
+        <image src='../../../../images/resume/img6.png'></image>
+        <image src='../../../../images/resume/img7.png'></image>
+        <image src='../../../../images/resume/img8.png'></image>
+       
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='content_l'>
+      <view class='content_l_view'>
+        <view class='view'>
+          <image src='../../../../images/resume/img12.png'></image>
+          {{message.age}}岁
+        </view>
+        <view class='view'>{{message.typeText}}</view>
+        <view class='view'>{{message.jobType}}</view>
+      </view>
+      <view class='content_l_text'>
+        <view class='text'>浏览 <text>{{message.play_num}}次</text></view>
+        <view class='text'>被收藏 <text>{{message.fav_num}}次</text></view>
+      </view>
+    </view>
+    <view class='content_r' bindtap='goResume'>
+      <text>文字简历</text>
+    </view>
+  </view>
+  <view class='bottom'>
+    <block wx:for="{{message.video}}" wx:key="{{index}}" >
+    <view class='bottom_img' data-index="{{index}}" data-id="{{item.id}}" bindlongpress='{{lookUserId == userId?"handleLongPress":""}}' bindtap='handleClick'>
+          <image mode='aspectFill' src='{{item.thumb}}'></image>
+          <image src='../../../../images/icon_video.png' class='play_btn'></image>
+    </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+/* pages/user/enterprise/clause/clause.wxss */
+.container{padding:30rpx;}
+.tit{text-align: center;font-size:30rpx;padding:20rpx 0 30rpx;}
+.hd{font-size:28rpx;text-align: justify;line-height: 1.72}
+.bd view{margin-top:20rpx;font-size: 28rpx;color:#666;text-align: justify;line-height: 1.72}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

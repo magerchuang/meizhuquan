@@ -1,0 +1,6 @@
+/* pages/user/oneself/undergo/undergo.wxss */
+.container{padding:30rpx;}
+textarea{border:1rpx solid #efefef;border-radius: 10rpx;width:100%;margin-bottom:30rpx;padding:20rpx;height:300rpx;box-sizing: border-box;font-size:30rpx;}
+.btn_area{margin-top:50rpx;}
+.btn_area button{background: #ff006e;color:#fff;}
+

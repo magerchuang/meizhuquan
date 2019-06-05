@@ -1,0 +1,6 @@
+<!--pages/user/oneself/salary/salary.wxml-->
+<view class='container'>
+  <view class='cell' wx:for="{{salary}}" wx:key="{{index}}">
+     <view class='cell_item {{ selected == index ? "cell_items" : ""}}' bindtap='select' data-index='{{index}}' data-money='{{item}}'>{{item}}</view>
+  </view>
+</view>

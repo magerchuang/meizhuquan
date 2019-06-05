@@ -1,0 +1,36 @@
+<!--pages/user/oneself/jobIntension/jobIntension.wxml-->
+<view class='container'>
+  <form bindsubmit='formSubmit'>
+  <view class="cell section">
+      <view class="cell_label"><text>期望职位</text></view>
+      <view class="cell_bd">
+        <picker value="{{eduration}}" bindchange="bindPickerChange"  range="{{edu}}">
+          <view class="picker">{{edu[index]}}</view>
+        </picker>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>期望行业</text></view>
+      <view class="cell_bd">
+        <picker value="{{eduration}}" bindchange="bindPickerChange"  range="{{edu}}">
+          <view class="picker">{{edu[index]}}</view>
+        </picker>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>工作城市</text></view>
+      <view class="cell_bd paddr30" bindtap='selectCity'>
+        <input type="text"  placeholder="选择城市" class="selectInput" disabled='true' value='{{city}}'></input>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>期望薪资</text></view>
+      <view class="cell_bd paddr30" bindtap="selectSalary">
+        <input type="text"  placeholder="选择月薪" class="selectInput" disabled='true' value='{{jobSalary}}'></input>
+      </view>
+  </view>
+  <view class="btn_area">
+      <button form-type="submit">确认</button>
+  </view>
+  </form>
+</view>

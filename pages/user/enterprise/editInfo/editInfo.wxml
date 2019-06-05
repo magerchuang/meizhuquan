@@ -1,0 +1,102 @@
+<view class='info_card'>
+  <view class='tit'>编辑招聘岗位信息</view>
+  <view class='gw mt20'>
+    <view bindtap='selectGw' class='selectGw'>
+        <view class='post'><text>招聘岗位</text><view bindtap='post'>{{post}}</view></view>
+    </view>
+    <view bindtap='selectXz' class='selectXz'>
+    <text>薪资范围</text>
+    <picker bindchange="bindXzChange" value="{{key}}" range="{{wages}}">
+        <view class='picker'>
+          {{wages[key]?wages[key]:"选择薪资范围"}}
+        </view>
+    </picker>
+    </view>
+  </view>
+  <!--企业位置 经验要求 学历-->
+  <view class='flag'>
+    <view class="cell section">
+        <view class="cell_label"><text>位置</text></view>
+        <view class="cell_bd">
+           西安
+        </view>
+    </view>
+    <view class="cell section">
+        <view class="cell_label"><text>经验要求</text></view>
+        <view class="cell_bd">
+          <picker value="{{y}}" range='{{years}}'   bindchange="yearsChange" >
+            <view class="picker">{{years[y]?years[y]:"选择经验要求"}}</view>
+          </picker>
+        </view>
+    </view>
+    <view class="cell section">
+        <view class="cell_label"><text>学历</text></view>
+        <view class="cell_bd">
+          <picker value="{{e}}" range='{{edu}}'   bindchange="eduChange" >
+            <view class="picker">{{edu[e]?edu[e]:"选择学历"}}</view>
+          </picker>
+        </view>
+    </view>
+  </view>
+  <!--技能要求及职位要求-->
+  <view class='c_box'>
+      <view class='c_jn'>
+        <view class='c_tit'>技能要求</view>
+        <view class='c_bd'>
+          <textarea wx:if="{{!isShow}}" placeholder="请输入技能要求" placeholder-class='textareaplaceholer'></textarea>
+          <text wx:else class='textarea_layer'>请输入技能要求</text>
+        </view>
+      </view>
+      <view class='c_ms'>
+        <view class='c_tit'>职位描述</view>
+        <view class='c_bd'>
+          <textarea wx:if="{{!isShow}}" placeholder="请输入职位描述" placeholder-class='textareaplaceholer'></textarea>
+          <text wx:else class='textarea_layer'>请输入职位描述</text>
+        </view>
+      </view>
+  </view>
+  <view class='subBtn'>
+      <button type='primary'>确定</button>
+  </view>
+  <view class='layer {{isShow?"maskShow":""}}'>
+      <view  class='position' >
+          <view class='position_all'>
+            <view class='position_hd black'>岗位</view>
+            <view class='position_bd'>
+                <view class='position_box'>
+                    <view class='position_tit black'><text>文职类助理</text><text data-index="1" bindtap='downMenu'>全部</text></view>
+                    <view class='position_con' style='height:{{height}}' >
+                      <view class='p_list'>总裁助理</view>
+                      <view class='p_list'>董事长助理</view>
+                      <view class='p_list'>总经理助理</view>
+                      <view class='p_list'>总裁助理</view>
+                      <view class='p_list'>董事长助理</view>
+                      <view class='p_list'>总经理助理</view>
+                    </view>
+                </view>
+                <view class='position_box'>
+                    <view class='position_tit black'><text>销售类助理</text><text  data-index="2" bindtap='downMenu'>全部</text></view>
+                    <view class='position_con'>
+                      <view class='p_list'>商务助理</view>
+                      <view class='p_list'>市场助理</view>
+                      <view class='p_list'>销售助理</view>
+                    </view>
+                </view>
+                <view class='position_box'>
+                    <view class='position_tit black'><text>技能类助理</text><text data-index="3" bindtap='downMenu'>全部</text></view>
+                    <view class='position_con'>
+                      <view class='p_list'>设计师助理</view>
+                      <view class='p_list'>研发助理</view>
+                      <view class='p_list'>Web前端助理</view>
+                    </view>
+                </view>
+              
+            </view>
+            <view class='buttom'>
+              <view class="animation-reset" >重置</view>
+              <view class="animation-button" bindtap="pBtn">确定</view>
+            </view>
+          </view>
+      </view>
+  </view>
+</view>

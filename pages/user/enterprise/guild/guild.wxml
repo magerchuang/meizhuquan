@@ -1,0 +1,7 @@
+<!--pages/user/enterprise/guild/guild.wxml-->
+<view class='container'>
+  <view class='cell' wx:for="{{salary}}" wx:key="{{index}}">
+     <view class='cell_item {{ selected == index ? "cell_items" : ""}}' bindtap='select' data-hy='{{item}}' data-index="{{index}}">{{item}}</view>
+  </view>
+</view>
+

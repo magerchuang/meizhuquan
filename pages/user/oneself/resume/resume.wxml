@@ -1,0 +1,92 @@
+<!--pages/user/oneself/resume/resume.wxml-->
+<!--基本信息-->
+<view class='resume'>
+      <view class='info_card'>
+        <view class='info_cardtit' bindtap=''>
+          <image src='../../../../images/icon_peo.png'></image>
+          <text>基本信息</text>
+        </view>
+        <view class='info_cardbox'>
+            <view class='info_img'><image src='{{userInfo.head_img}}'></image></view>
+            <view class='info_rtxt gray'>
+                <view class='user_name'>{{userInfo.nickname}}</view>
+                <view class='addr'>
+                  <view class='text'>{{userInfo.gender}}</view>
+                  <view  class='text'>{{userInfo.age}}岁</view>
+                  <view class='text'>{{userInfo.education_degree}}</view>
+                </view>
+            </view>
+        </view>
+      </view>
+      <!--工作经历-->
+      <view class='info_card'>
+        <view class='info_cardtit'>
+          <image src='../../../../images/icon_bb.png'></image>
+          <text>工作经历</text>
+        </view>
+        <block wx:for="{{userInfo.work_experience}}" wx:key="{{index}}">
+        <view class='info_cardbox'>
+          <view class='info_licon red'><text></text></view>
+            <view class='info_rtxt gray'>
+                <view class='r_time'>
+                  <text>{{item.start_time}}</text>--<text>{{item.end_time}}</text>
+                </view>
+                <view class='r_compay mt15'>{{item.company}}</view>
+                <view class='r_zw mt15'>{{item.job}}</view>
+            </view>
+        </view>
+        </block>
+      </view>
+      <!--求职意向-->
+      <view class='info_card'>
+        <view class='info_cardtit'>
+          <image src='../../../../images/icon_plane.png'></image>
+          <text>求职意向</text>
+        </view>
+        <view class='info_cardbox wrap gray'>
+         <view class='info_licon red'><text></text></view>
+         <view class='info_rtxt gray'>
+            <view class='job'>
+              <view class='job_label'><text>行</text><text>业</text></view>
+              <view class='job_labelr'>
+                <view class='job_t'>{{userInfo.job_intension.industry}}</view>
+              </view>
+            </view>
+            <view class='job mt15'>
+              <view class='job_label'>工作地点</view>
+              <view class='job_labelr black'>{{userInfo.job_intension.city}}</view>
+            </view>
+            <view class='job mt15'>
+              <view class='job_label'>期望薪资</view>
+              <view class='job_labelr'>{{userInfo.job_intension.salary}}</view>
+            </view>
+            <view class='job mt15'>
+                 <view class='job_label'>求职岗位</view>
+                  <view class='job_labelr'>
+                    <view class='job_t'>{{userInfo.job_intension.job}}</view>
+                  </view>
+                 </view>
+            </view>
+        </view>
+      </view>
+      <!--教育经历-->
+      <view class='info_card'>
+        <view class='info_cardtit'>
+          <image src='../../../../images/icon_mz.png'></image>
+          <text>教育经历</text>
+        </view>
+        <block wx:for="{{userInfo.edu_experience}}" wx:key="{{indx}}">
+        <view class='info_cardbox'>
+          <view class='info_licon red'><text></text></view>
+            <view class='info_rtxt gray'>
+                <view class='r_time'>
+                   <text>{{item.start_time}}</text>--<text>{{item.end_time}}</text>
+                </view>
+                <view class='r_compay mt15'>{{item.company}}</view>
+                <view class='r_zw mt15'>{{item.subject}}</view>
+            </view>
+        </view>
+        </block>
+      </view>
+      
+    </view>

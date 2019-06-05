@@ -1,0 +1,10 @@
+/* pages/user/oneself/nukb/nukb.wxss */
+.form{padding:20rpx;height:calc(100% - 100rpx);box-sizing: border-box;overflow-y: auto;}
+.form_item {height:70rpx;line-height: 70rpx;margin-bottom:20rpx;display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-align: center;-webkit-align-items: center;align-items: center;}
+.card_item{height:140rpx;line-height: 140rpx;}
+.form_item text.label{width:180rpx;font-size:26rpx;color:#666;display: inline-block;text-align: center;}
+.form_item input{width:500rpx;border:1px solid #ccc;color:#666;font-size:28rpx;display: inline-block;vertical-align: middle;height:70rpx;box-sizing: border-box;padding:0 20rpx;} 
+.placeholderStyle{color:#ccc;}
+.form_item text.red{color:#f00;display: inline-block;padding-top:10rpx;box-sizing: border-box;}
+.form_item input.yazh{width:300rpx;margin-right:20rpx;}
+.form_item button{width:180rpx;font-size: 26rpx;display: inline-block;height:70rpx;background: #ff006e;color:#fff;line-height: 70rpx;margin:0;}

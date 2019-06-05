@@ -1,0 +1,242 @@
+
+/* pages/resume/click/purchase.wxss */
+page {
+  position: relative;
+}
+.gmsm {
+  display: none;
+  position: absolute;
+  top: 440rpx;
+  left: 144rpx;
+  width:421rpx;
+  padding: 0 22rpx;
+  height: 227rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20rpx;
+  z-index: 2;
+}
+.gmsm_t {
+  margin: 40rpx 0 4rpx 0;
+  text-align: center;
+}
+.gmsm_t text {
+  color: white;
+}
+.gmsm_b {
+  text-align: center;
+}
+.gmsm_b text {
+  color: white;
+  font-size: 25rpx;
+}
+.block {
+  display: block;
+}
+.container {
+  height: 100%;
+}
+.top {
+  width: 702rpx;
+  height: 316rpx;
+  margin: 0 auto;
+  padding-top: 48rpx;
+  
+}
+.top_l {
+  float: left;
+  width: 164rpx;
+  margin-right: 64rpx;
+}
+.top_l_img {
+  width: 164rpx;
+  height: 164rpx;
+  margin-bottom: 36rpx;
+}
+.top_l_img image {
+  display: block;
+  width: 164rpx;
+  height: 164rpx;
+  border-radius: 50%;
+  border: 1px solid #fd026e;
+}
+.top_l_text {
+  text-align: center;
+  font-size: 44rpx;
+  color: #333333;
+  font-weight: blod !important;
+}
+.top_r {
+  float: right;
+  width: 452rpx;
+  margin-top: 20rpx;
+}
+.top_r_title {
+  margin-bottom: 102rpx;
+}
+.top_fenxiang {
+  float: left;
+  width: 74rpx;
+  line-height: 75rpx;
+  text-align: center;
+  margin-right: 10rpx;
+  background: #ff006e;
+  border-radius: 8rpx;
+  display:flex;
+  height:75rpx;
+  justify-content:center;
+  align-items:center;
+
+}
+.top_fenxiang image {
+  width: 32rpx;
+  height: 34rpx;
+}
+.top_phone {
+  float: left;
+  width: 174rpx;
+  height: 74rpx;
+  padding-left: 76rpx;
+  margin-right: 10rpx;
+  line-height: 74rpx;
+  background: #999999;
+  border-radius: 8rpx;
+}
+.top_phone image {
+  width: 22rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+.top_phone text {
+ font-size: 32rpx;
+ color: white;
+}
+.top_goumai {
+  float: left;
+  width: 108rpx;
+  height: 74rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background: #ff006e;
+  border-radius: 8rpx;
+}
+.top_goumai.bgc{background: #ccc;}
+.top_goumai text {
+  font-size: 32rpx;
+  color: white;
+  display: block;
+  text-align: center;
+  line-height: 74rpx;
+}
+
+.top_r_content {
+  width: 452rpx;
+  padding-bottom: 47rpx;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.top_r_content text {
+  font-size: 23rpx;
+  color: #ff006e;
+}
+.top_r_content_img {
+  position: absolute;
+  top: 6rpx;
+  right: 97rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+.top_r_bottom {
+  width: 438rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.top_r_bottom image {
+  width: 55rpx;
+  height: 55rpx;
+}
+.content {
+  width: 702rpx;
+  height: 108rpx;
+  
+  margin: 0 auto;
+  margin-bottom: 55rpx;
+}
+.content_l {
+  float: left;
+}
+.content_l_view{
+  width: 330rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18rpx;
+}
+.content_l_view .view {
+  width: 103rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  background: #ccc;
+  color: white;
+  font-size: 22rpx;
+  border-radius: 8rpx;
+}
+.content_l_view .view:nth-of-type(1) image {
+  width: 15rpx;
+  height: 20rpx;
+}
+.content_l_text {
+  display: flex;
+  justify-content: space-between;
+}
+.content_l_text .text {
+  font-size: 30rpx;
+}
+.content_l_text .text:nth-of-type(1){
+  margin-right: 10rpx;
+}
+.content_l_text .text text{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.content_r {
+  float: right;
+  width: 250rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #ff006e;
+  border-radius: 10rpx;
+}
+.content_r {
+  font-size: 32rpx;
+  color: white;
+}
+.bottom {
+  float: left;
+  width: 702rpx;
+  padding: 0 24rpx;
+}
+.bottom_img {
+  float: left;
+  width: 232rpx;
+  height: 312rpx;
+  margin: 0 3rpx 3rpx 0;
+  position: relative;
+}
+.bottom_img:nth-of-type(3n){
+  margin-right: 0rpx;
+}
+.bottom_img image{
+  width: 232rpx;
+  height: 312rpx;
+}
+.bottom_img image.play_btn{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}

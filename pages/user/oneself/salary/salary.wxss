@@ -1,0 +1,4 @@
+/* pages/user/oneself/salary/salary.wxss */
+.cell{position: relative;display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-align: center;-webkit-align-items:center;align-items:center;border-bottom:1rpx solid #e6e6e6;padding:0 30rpx;}
+.cell_item{font-size:30rpx;position: relative;width:100%;padding:30rpx 0;}
+.cell_items::before{content: '';position: absolute;width: 10rpx;height: 30rpx;color: #ff498f;border-bottom: 2px solid;border-right: 2px solid;top: 50%;transform-origin: center;transform: translate(-50%, -50%) rotate(45deg); -webkit-transform: translate(-50%, -50%) rotate(45deg);right:0;}

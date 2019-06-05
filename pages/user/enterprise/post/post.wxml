@@ -1,0 +1,41 @@
+<!--pages/user/enterprise/post/post.wxml-->
+<!--pages/user/enterprise/baseInfo/baseInfo.wxml-->
+<view class='container'>
+  <form bindsubmit='formSubmit'>
+  <view class='cell section'>
+     <view class='cell_label'><text>职位名称</text></view>
+     <view class="cell_bd paddr30" bindtap='gm'>
+        <input type='text' disabled='true' placeholder='选择职位名称' value='{{gm}}'></input>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>工作地点</text></view>
+      <view class="cell_bd paddr30" bindtap='selectCity'>
+        <input type='text' disabled='true' placeholder='选择工作地点' value='{{city}}'></input>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>技能要求</text></view>
+      <view class="cell_bd paddr30" bindtap='skill'>
+        <input type='text' disabled='true' placeholder='选择技能要求' value='{{skill}}'></input>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>薪资范围</text></view>
+      <view class="cell_bd paddr30" bindtap='money'>
+        <input type='text' disabled='true' placeholder='输入薪资范围' value='{{money}}'></input>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>职位描述</text></view>
+      <view class="cell_bd paddr30" bindtap='desc'>
+        <input type='text' disabled='true' placeholder='输入职位描述' value='{{desc}}'></input>
+      </view>
+  </view>
+  <view class="btn_area">
+      <button form-type="submit">确认</button>
+  </view>
+  </form>
+</view>
+
+

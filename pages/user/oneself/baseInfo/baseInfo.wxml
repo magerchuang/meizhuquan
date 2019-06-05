@@ -1,0 +1,52 @@
+<!--pages/user/oneself/baseInfo/baseInfo.wxml-->
+<view class='container'>
+  <form bindsubmit='formSubmit'>
+  <view class='headimg' bindtap='picChange'>
+     <text>头像</text>
+     <!--<image src='../../../../images/headimg.png'></image>-->
+     <image src='{{headImg}}'></image>
+  </view>
+  <view class='info_name cell'>
+     <view class='cell_label'><text>姓名</text></view>
+     <view class="cell_bd"><input type='text' placeholder='请输入姓名' ></input></view>
+  </view>
+  <view class='info_name cell'>
+     <view class='cell_label'><text>性别</text></view>
+     <view class="cell_bd">
+        <radio-group bindchange="radioChange" class="radiogroup">
+           <label class='radio_label' wx:for="{{sex}}">
+              <radio value='{{item.value}}'></radio>
+              <view class='sex_txt'>{{item.name}}</view>
+           </label>
+        </radio-group>
+     </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>参加工作时间</text></view>
+      <view class="cell_bd">
+        <picker mode="date" value="{{workDate}}" start="1980-01-01"   bindchange="bindDateChange" fields="month">
+          <view class="picker">{{workDate}}</view>
+        </picker>
+      </view>
+  </view>
+  <view class="cell section">
+      <view class="cell_label"><text>出生年月</text></view>
+      <view class="cell_bd">
+        <picker mode="date" value="{{date}}" start="1980-01-01"   bindchange="bindbirthdayChange"  fields="month">
+          <view class="picker">{{birthDate}}</view>
+        </picker>
+      </view>
+  </view>
+  <view class='info_name cell'>
+     <view class='cell_label'><text>手机号</text></view>
+     <view class="cell_bd"><input type='text' placeholder='请输入手机' ></input></view>
+  </view>
+  <view class='info_name cell'>
+     <view class='cell_label'><text>微信号</text></view>
+     <view class="cell_bd"><input type='text' placeholder='请输入微信号' ></input></view>
+  </view>
+  <view class="btn_area">
+      <button form-type="submit">确认</button>
+  </view>
+  </form>
+</view>

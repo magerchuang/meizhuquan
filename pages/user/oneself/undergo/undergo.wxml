@@ -1,0 +1,11 @@
+<!--pages/user/oneself/undergo/undergo.wxml-->
+<view class='container'>
+   <form bindsubmit='submit'>
+      <view class='textarea'>
+          <textarea name="textarea" auto-focus="true" placeholder='在校经历有什么'/>
+      </view>
+      <view class="btn_area">
+          <button form-type="submit">确认</button>
+      </view>
+   </form>
+</view>

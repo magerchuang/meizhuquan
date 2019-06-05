@@ -1,0 +1,24 @@
+<!--pages/enterprise/camerademo/camerademo.wxml-->
+<camera device-position="{{camera}}" flash="off" binderror="error" class='video'>
+  <cover-view class='photo'>
+    <cover-view class='takePhoto'>
+        <button class='start' catchtap='startRecord' wx:if="{{startrecord}}" disabled='{{disabled}}'>拍摄</button>
+        <cover-view class='pause' catchtap='stopRecord' wx:else>{{time}}秒</cover-view>
+    </cover-view>
+    <cover-view class='takePhoto_txt'>
+    <cover-view class='txtf'>{{txt}}</cover-view>
+    <cover-view>(0~30秒)</cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-view class='camera_front' bindtap='cameraback'>
+    <cover-image src='../../../images/resume/icon_camera.png'></cover-image>
+    <cover-view>翻转</cover-view>
+  </cover-view>
+  <cover-view class='upadate' wx:if="{{vupdate}}">
+      <cover-image src='../../../images/resume/icon_x.png' catchtap="videoDelete"></cover-image>
+      <cover-image src='../../../images/resume/icon_right.png' catchtap="videoUpdate"></cover-image>
+  </cover-view>
+  <cover-view class='top'>
+    <cover-image class='back' src='../../../images/resume/img16.png' catchtap='goBack'></cover-image>
+  </cover-view>
+</camera>

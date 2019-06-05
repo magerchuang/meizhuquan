@@ -1,0 +1,132 @@
+<!--pages/user/oneself/companyDetail/companyDetail.wxml-->
+<view class='container'>
+   <view class='topbox'>
+      <view class='company'>
+          <view class='company_name'>美助圈科技有限公司</view>
+          <view class='company_scale'>500-1000人·互联网</view>
+      </view>
+      <view class='company_logo'><image src='../../../../images/company_logo.png'></image></view>
+   </view>
+   <view class='company_info'>
+      <view class='company_intro'>
+        <view class='intro_tit'>公司介绍</view>
+        <view class='intro_detail'>美助圈科技有限公司是一家致力于互联网信息和技术的公司，是全陕西第一家以人力资源为...<text>阅读全文</text></view>
+      </view>
+      <view class='company_pv'>
+        <view class='intro_tit'>视频图集</view>
+        <view class='company_pic'>
+            <view class='img_item'>
+                <image src='../../../../images/c_img.png'></image>
+            </view>
+            <view class='img_item'>
+                <image src='../../../../images/c_img.png'></image>
+            </view>
+            <view class='img_item'>
+                <image src='../../../../images/c_img.png'></image>
+            </view>
+            <view class='img_item'>
+                <image src='../../../../images/c_img.png'></image>
+            </view>
+            <view class='img_item'>
+                <image src='../../../../images/c_img.png'></image>
+            </view>
+            <view class='img_item'>
+                <image src='../../../../images/c_img.png'></image>
+            </view>
+            <view class='img_item'>
+                <image src='../../../../images/c_img.png'></image>
+            </view>
+            <view class='img_box'>
+              <view class='img_add'></view>
+            </view>
+        </view>
+      </view>
+      <view class='post'>
+         <view class='intro_tit'>招聘岗位</view>
+         <view class='post_list'>
+            <view class='post_listtit'><text class='post_zw'>销售专员</text><text class='post_money'>8k-12k</text></view>
+            <view class='post_label'>
+              <text>西安 碑林区 长安路</text><text>不限经验</text><text>大专及以上</text>
+            </view>
+            <view class='post_more'>
+               <view class='post_xqtit'>技能要求：</view>
+                <view class='post_xqlist' style='height:{{jnH}}' data->
+                  <text>1.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>2.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>3.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>4.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>5.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>6.具有良好的沟通及谈判能力，清晰思维</text>
+                </view>
+                <view class='more' >查看全部<image src='../../../../images/icon_arrow1.png'></image></view>
+                <view class='post_xqtit'>职位描述：</view>
+                <view class='post_xqlist' style='height:{{zwH}}'>
+                  <text>1.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>2.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>3.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>4.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>5.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>6.具有良好的沟通及谈判能力，清晰思维</text>
+                </view>
+                <view class='more' >查看全部<image src='../../../../images/icon_arrow1.png'></image></view>
+            </view>
+         </view>
+         <view class='post_list'>
+            <view class='post_listtit'><text class='post_zw'>销售专员</text><text class='post_money'>8k-12k</text></view>
+            <view class='post_label'>
+              <text>西安 碑林区 长安路</text><text>不限经验</text><text>大专及以上</text>
+            </view>
+            <view class='post_more'>
+               <view class='post_xqtit'>技能要求：</view>
+                <view class='post_xqlist' style='height:{{jnH}}' data->
+                  <text>1.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>2.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>3.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>4.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>5.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>6.具有良好的沟通及谈判能力，清晰思维</text>
+                </view>
+                <view class='more' >查看全部<image src='../../../../images/icon_arrow1.png'></image></view>
+                <view class='post_xqtit'>职位描述：</view>
+                <view class='post_xqlist' style='height:{{zwH}}'>
+                  <text>1.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>2.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>3.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>4.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>5.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>6.具有良好的沟通及谈判能力，清晰思维</text>
+                </view>
+                <view class='more' >查看全部<image src='../../../../images/icon_arrow1.png'></image></view>
+            </view>
+         </view>
+         <view class='post_list'>
+            <view class='post_listtit'><text class='post_zw'>销售专员</text><text class='post_money'>8k-12k</text></view>
+            <view class='post_label'>
+              <text>西安 碑林区 长安路</text><text>不限经验</text><text>大专及以上</text>
+            </view>
+            <view class='post_more'>
+               <view class='post_xqtit'>技能要求：</view>
+                <view class='post_xqlist' style='height:{{jnH}}' data->
+                  <text>1.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>2.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>3.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>4.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>5.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>6.具有良好的沟通及谈判能力，清晰思维</text>
+                </view>
+                <view class='more' >查看全部<image src='../../../../images/icon_arrow1.png'></image></view>
+                <view class='post_xqtit'>职位描述：</view>
+                <view class='post_xqlist' style='height:{{zwH}}'>
+                  <text>1.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>2.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>3.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>4.具有良好的沟通及谈判能力，清晰思维</text>
+                  <text>5.要求本科毕业，优秀者可放宽至大专</text>
+                  <text>6.具有良好的沟通及谈判能力，清晰思维</text>
+                </view>
+                <view class='more' >查看全部<image src='../../../../images/icon_arrow1.png'></image></view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>

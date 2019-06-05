@@ -1,0 +1,17 @@
+<!--pages/user/publish/publish.wxml-->
+<view class="publish">
+   <view class='pub_top'>
+     <view class='pub_topbox'>
+          <form bindsubmit="evaSubmit">
+              <textarea bindinput="bindinput" maxlength='60' placeholder='写标题并使用合适的话题，能让更多的人看到~（不超过60字)'></textarea>
+          </form>
+         <image src='{{picture}}'></image>
+     
+     </view>
+   </view>
+   <view class='add_location'>
+     <view class='addtxt' bindtap='goLocal'><image src='../../../images/resume/img36.png'></image>{{location == ''?"添加位置":location}}</view>
+     <view class='add_tag'><text>肯德基(中贸广场店)</text><text>必胜客(中贸广场店)</text><text>魏家凉皮(中贸广场店)</text></view>
+   </view>
+   <button type='button' catchtap="chooseFile" disabled='{{disabled}}'>发布</button>
+</view>

@@ -1,0 +1,228 @@
+
+<view class='container'>
+     <image class='img' src='../../../images/resume/img21.jpg' style="height:{{winHeight}}px"/>
+          <image class='img1' src='../../../images/resume/img14.png' />
+    <view class='top'>
+      <view class='top_l'>
+        <image src='../../../images/resume/img16.png'></image>
+        <text>西安</text>
+        <text bindtap='wzjl'>招聘信息</text>
+        <text bindtap='filtrate'>筛选</text>
+        <image src='../../../images/resume/img17.png'></image>
+      </view>
+      <view class='top_r'>
+        <image src='../../../images/resume/img18.png'></image>
+      </view>
+    </view>
+    <view class='content'>
+      <view class='content_r'>
+        <view class='content_img centre'>
+          <image src='../../../images/headimg.png'></image>
+          <image src='../../../images/resume/img19.png'></image>
+          <text>距你1km</text>
+        </view>
+        <view class='content_img1 centre' bindtap='show'>
+          <image src='../../../images/resume/img20.png'></image>
+        </view>
+        <view class='content_img2 centre'>
+          <image src='../../../images/resume/img43.png'></image>
+          <view class='content_text'>
+            <text class='sameWhite'>投简历</text>
+          </view>
+        </view>
+        <view class='content_img2 centre'>
+          <image src='../../../images/resume/img22.png'></image>
+          <view class='content_text'>
+            <text class='sameWhite'>100w</text>
+          </view>
+        </view>
+        <view class='content_img2 centre'>
+          <image src='../../../images/resume/img23.png'></image>
+          <view class='content_text'>
+             <button open-type='share' style='border-radius: 0;border:none !important;margin-top:10rpx; background-color:transparent;outline:none;color:white;font-size:20rpx;'>分享</button>
+          </view>
+        </view>
+     
+       
+      </view>
+      
+    </view>
+    <view class='bottom'>
+      <view class='bottom_text'>
+        <text>猫电网络科技有限公司</text>
+      </view>
+      <view class='bottom_text bottom_text2'>
+        <text decode="{{true}}">运营专员&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4k-8k</text>
+      </view>
+      <view class='bottom_text'>
+        <image src='../../../images/resume/img26.png'></image>
+        <text>@马云云原声创作</text>
+      </view>
+      
+    </view>
+    <view class='footer'>
+      <view class='footer_box'>
+        <view class='footer_img'>
+          <image src='../../../images/resume/img27.png'></image>
+        </view>
+        <view class='footer_text'>
+          <text>简历</text>
+        </view>
+      </view>
+      <view class='footer_box'>
+        <view class='footer_img'>
+          <image src='../../../images/resume/img28.png'></image>
+        </view>
+        <view class='footer_text'>
+          <text>企业</text>
+        </view>
+      </view>
+       <view class='footer_box footer_box_none'>
+        <view class='footer_img footer_add'>
+          <image src='../../../images/resume/img31.png'></image>
+        </view>
+      
+      </view>
+      <view class='footer_box'>
+        <view class='footer_img'>
+          <image src='../../../images/resume/img29.png'></image>
+        </view>
+        <view class='footer_text'>
+          <text>VIP</text>
+        </view>
+      </view>
+      <view class='footer_box'>
+        <view class='footer_img'>
+          <image src='../../../images/resume/img35.jpg'></image>
+        </view>
+        <view class='footer_text'>
+          <text>我的</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 筛选 -->
+    <view class='{{fstyleClass}}'>
+      <view class='filtrate'>
+        <view class='filtrate_top'>
+          美助圈
+          <image src='../../../images/resume/img36.png'></image>
+          <text>西安市碑林区南稍门中贸广场...</text>
+          <view class='scale'>企业规模</view>
+          <view class='filtrate_radio'>
+            <view class='filtrate_radio_text {{curIndex == 1?"filtrate_active":""}}' bindtap='tab_radio' data-index='1'>
+              0~50人
+            </view>
+             <view class='filtrate_radio_text {{curIndex == 2?"filtrate_active":""}}' bindtap='tab_radio' data-index='2'>
+              50~200人
+            </view>
+             <view class='filtrate_radio_text {{curIndex == 3?"filtrate_active":""}}' bindtap='tab_radio' data-index='3'>
+             200人以上
+            </view>
+          </view>
+          <view class='scale'>薪酬范围</view>
+          <view class='filtrate_remuneration'>
+            <view class='filtrate_remuneration_text {{remuneration == 1?"filtrate_active":""}}' bindtap='tab_remuneration' data-index='1'>
+              最低薪酬
+            </view>
+             <view class='filtrate_remuneration_middle'>
+              -
+            </view>
+             <view class='filtrate_remuneration_text {{remuneration == 2?"filtrate_active":""}}' bindtap='tab_remuneration' data-index='2'>
+             最高薪酬
+            </view>
+          </view>
+          <view class='strip'></view>
+          <view class='scale'>岗位</view>
+          <block wx:for="{{category}}" wx:for-item="value" wx:for-index="idx" >
+          <!-- 年龄 -->
+          <view class='filtrate_age'>
+            <view class='filtrate_age_text'>{{value.title}}
+              <view class='more_img' wx:if="{{value.sub.length>6}}" data-i="{{idx}}" data-on="{{show[idx]}}" bindtap="more">
+                全部<image src='../../../images/resume/img39.png'></image>
+              </view>
+            </view>
+            <view class='filtrate_age_text_num {{show[idx]?"":"auto_height"}}'>
+              <!--二级类--> 
+              <checkbox-group bindchange="checkboxChange{{idx}}">
+              <label class="{{item.checked?'checkbox checked':'checkbox'}} {{item.disabled?'disabled':''}}" bindtap='checkbox' wx:for="{{value.sub}}" data-idx="{{idx}}" data-index="{{index}}" wx:key="item.title" data-disabled="{{item.disabled}}">
+              <checkbox value="{{item.id}}" checked="{{item.checked}}"/>
+              {{item.title}}
+              </label>
+              </checkbox-group>
+            </view>
+          </view>
+          </block>
+          <!-- /// -->
+         
+          <!-- input -->
+          <view class='{{btn}}'>
+            <button class='{{button_num == 1?"btn_active":""}}' data-index='1 'bindtap='btn_reset'>重置</button>
+            <button class='{{button_num == 2?"btn_active":""}}' data-index='2 'bindtap='btn_submit'>确定</button>
+          </view>
+        </view>
+      </view>
+      <!-- 筛选的个数 -->
+      <view class='{{yc_num}}'>
+        <view class='filtrate_img'>
+          <image src='../../../images/resume/img42.png'></image>
+        </view>
+        <view class='filtrate_text'>
+          <text>筛选个数不能超过5哦~</text>
+        </view>
+      </view>
+    </view>
+    <!-- 招聘信息 -->
+    <view class='{{wstyleClass}}'>
+      <view class='wz_resume_hide' bindtap='hide_wz'>
+        <image src='../../../images/resume/img32.png'></image>
+      </view>
+      <view class='wz_resume_title'>
+        <view class='wz_img'>
+          <image src='../../../images/headimg.png'></image>
+        </view>
+        <view class='wz_text'>
+          <text>西安猫店网络科技有限公司</text>
+        </view>
+      </view>
+      <scroll-view class='wz_resume_bottom' scroll-y style="height: 70%;">
+        <view class='scroll-view_resume'>
+          <view class='wz_input clear same_inp same_left'>
+          <text>500-100人</text>
+          <text>互联网</text>
+        </view>
+        <view class='wz_introduce same_left'>
+          <view class='wz_introduce_t '>
+            <text>公司介绍</text>
+          </view>
+          <view>
+            <text>西安猫电网络科技有限公司成立于西安猫电网络科技有限公司成立于西安猫司成立于西安猫电网络科技有限公司成立于。</text>
+          </view>
+        </view>
+        <view class='wz_post same_left'>
+          <view class='wz_post_t'>
+            <text>招聘岗位</text>
+          </view>
+          <view class='wz_post_c'>
+            <text>总裁助理</text>
+            <text>4k-6k</text>
+          </view>
+          <view class='wz_post_b clear same_input'>
+            <text>西安-碑林区-南稍门</text>
+            <text>1-3年</text>
+            <text>本科</text>
+          </view>
+          <view class='wz_post_f'>
+            <view>技能要求:</view>
+            <view>1.要求本科毕业生，优秀者可放宽至大专；</view>
+            <view>2.具有良好的沟通及谈判能力，清晰...</view>
+            <view>职位描述:</view>
+          </view>
+        </view>
+        </view>
+      </scroll-view>
+      
+    </view>
+</view>
+
+

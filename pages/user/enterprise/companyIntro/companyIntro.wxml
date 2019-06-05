@@ -1,0 +1,11 @@
+<!--pages/user/enterprise/companyIntro/companyInfo.wxml-->
+<view class='container'>
+   <form bindsubmit='submit'>
+      <view class='textarea'>
+          <textarea name="textarea" auto-focus="true" placeholder='公司介绍'/>
+      </view>
+      <view class="btn_area">
+          <button form-type="submit">确认</button>
+      </view>
+   </form>
+</view>
